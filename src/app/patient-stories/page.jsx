@@ -417,7 +417,10 @@ export default function PatientStoriesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background scroll-smooth" style={{ scrollSnapType: 'y proximity' }}>
+    <div
+      className="min-h-screen bg-background scroll-smooth"
+      style={{ scrollSnapType: 'y proximity' }}
+    >
       <Header transparent={true} />
       <main>
         <ScrollAnimation>
@@ -441,7 +444,10 @@ export default function PatientStoriesPage() {
         </ScrollAnimation>
 
         <ScrollAnimation>
-          <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-secondary/5" style={{ scrollSnapAlign: 'start' }}>
+          <section
+            className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-secondary/5"
+            style={{ scrollSnapAlign: 'start' }}
+          >
             <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 text-center">
               <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary mb-4">
                 Ready to Start Your Transformation?
