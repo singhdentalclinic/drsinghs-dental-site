@@ -151,7 +151,7 @@ export default function InstagramConnect() {
       container.scrollTo({
         left: scrollX,
         top: scrollY,
-        behavior: 'instant'
+        behavior: 'instant',
       });
     }
   }, []);

@@ -145,7 +145,7 @@ const ReviewCard = () => {
   );
 };
 
-export default function HeroSection({ stats, heroData }) {
+export default function HeroSection({ stats }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [isSwipe, setIsSwipe] = useState(false);
 
@@ -284,10 +284,11 @@ export default function HeroSection({ stats, heroData }) {
                 resetAutoSlide();
                 setCurrentSlideIndex(idx);
               }}
-              className={`relative h-1.5 md:h-2 rounded-full overflow-hidden cursor-pointer transition-all duration-500 ease-in-out shadow-sm ${idx === currentSlideIndex
-                ? 'w-8 md:w-12 bg-white/70'
-                : 'w-1.5 md:w-2 bg-white/30 hover:bg-white'
-                }`}
+              className={`relative h-1.5 md:h-2 rounded-full overflow-hidden cursor-pointer transition-all duration-500 ease-in-out shadow-sm ${
+                idx === currentSlideIndex
+                  ? 'w-8 md:w-12 bg-white/70'
+                  : 'w-1.5 md:w-2 bg-white/30 hover:bg-white'
+              }`}
               aria-label={`Go to slide ${idx + 1}`}
             >
               {idx === currentSlideIndex && (
@@ -497,15 +498,4 @@ HeroSection.propTypes = {
     rating: PropTypes.number.isRequired,
     reviews: PropTypes.number.isRequired,
   }).isRequired,
-  heroData: PropTypes.shape({
-    testimonials: PropTypes.arrayOf(
-      PropTypes.shape({
-        image: PropTypes.string.isRequired,
-        alt: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        treatment: PropTypes.string.isRequired,
-      })
-    ),
-  }),
 };
