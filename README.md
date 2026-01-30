@@ -1,62 +1,64 @@
-# Singh Dental Clinic
+# Dr. Singh Dental Clinic – Website
 
-A modern, responsive web application for Singh Dental Clinic, built with Next.js and designed to provide a premium user experience.
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
+![License](https://img.shields.io/badge/License-Proprietary-red)
 
-## Ã¢Å“¨ Features
 
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
-- **Modern UI**: Clean aesthetics with smooth animations using GSAP and Framer Motion.
-- **Service Categories**: Detailed information about various dental treatments (Kids Dentistry, Braces, Aligners, etc.).
-- **Patient Stories**: Dedicated section for testimonials and success stories.
-- **Contact Integration**: Easy-to-access contact information and clinic location.
+Production-ready website for **Dr. Singh Dental Clinic**, built using **Next.js 14 (App Router)** and deployed on **Vercel** with a custom domain.
 
-## Ã°Å¸€º Ã¯¸ Tech Stack
+This repository follows a professional **Git + PR + Preview Deployment** workflow and is designed for scalability, maintainability, and performance.
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [GSAP](https://greensock.com/gsap/) & [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [Lucide React](https://lucide.dev/) & [Heroicons](https://heroicons.com/)
-- **Smooth Scroll**: [Lenis](https://github.com/darkroomengineering/lenis)
+---
 
-## Ã°Å¸Å¡‚¬ Getting Started
+## 🌐 Live Website
 
-To run this project locally, follow these steps:
+- **Production:** https://www.drsinghdental.com  
+- **Preview Deployments:** Generated automatically via Vercel for pull requests
 
-### 1. Clone the repository
+---
 
-```bash
-git clone <repository-url>
-cd singh-dental-clinic
-```
+## 🛠 Tech Stack
 
-### 2. Install dependencies
+- **Framework:** Next.js 14 (App Router)
+- **Language:** JavaScript (React)
+- **Styling:** Tailwind CSS
+- **Linting & Formatting:** ESLint + Prettier
+- **Deployment:** Vercel
+- **Version Control:** GitHub (PR-based workflow)
 
-```bash
-npm install
-```
+---
 
-### 3. Run the development server
+## 📁 Project Structure
 
-```bash
-npm run dev
-```
+```text
+src/
+├── app/                    # App Router pages and layouts
+│   ├── about/              # About page
+│   ├── book-appointment/   # Book Appointment sections & components
+│   ├── contact/            # Contact page
+│   ├── homepage/           # Homepage sections & components
+│   ├── our-team/           # Our Team sections & components
+│   ├── patient-stories/    # Testimonials & stories
+│   └── treatments/         # Treatments & dynamic services
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+│
+├── components/         # Reusable UI components
+├── contexts/           # React Contexts (global state)
+├── lib/                # Utility functions
+├── styles/             # Global styles
+├── utils/              # Utility functions
+└── public/             # Static assets (images, icons, fonts)
 
-### 4. Build for production
 
-```bash
-npm run build
-npm start
-```
+## 🔐 Contribution Policy
 
-## Ã°Å¸€œ€š Project Structure
+This repository follows a fork-based contribution model.
+External contributors must fork the repository and submit changes via Pull Requests.
+Direct write access is restricted to maintainers.
 
-- `src/app/` - Next.js App Router pages and layouts.
-- `src/components/` - Reusable UI components.
-- `public/` - Static assets (images, icons, etc.).
-- `tailwind.config.js` - Styling configuration.
 
-## Ã°Å¸€œ€ž License
+## 📜 License
 
-This project is licensed under the ISC License - see the `package.json` file for details.
+This project is proprietary software.
+Unauthorized use, copying, or redistribution is prohibited.
