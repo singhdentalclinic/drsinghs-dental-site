@@ -5,7 +5,6 @@ import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
 export default function VideoTestimonial({
-  thumbnail,
   patientName,
   treatment,
   videoUrl,
@@ -15,24 +14,12 @@ export default function VideoTestimonial({
 }) {
   return (
     <div
-      className={`flex flex-col group w-[280px] md:w-[290px] mx-auto cursor-pointer transition-all duration-500 ease-in-out ${
-        isActive ? 'scale-100' : 'scale-[0.85]'
-      }`}
+      className={`flex flex-col group w-[280px] md:w-[290px] mx-auto cursor-pointer transition-all duration-500 ease-in-out ${isActive ? 'scale-100' : 'scale-[0.85]'
+        }`}
       onClick={() => onPlay(videoUrl)}
     >
       {/* Video Content Card */}
       <div className="relative w-full h-[420px] md:h-[435px] rounded-xl overflow-hidden bg-muted shadow-lg transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2">
-        <div className="absolute inset-0">
-          <AppImage
-            src={thumbnail?.url}
-            alt={thumbnail?.alt}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          {/* Dark Shade Overlay */}
-          <div className="absolute inset-0 bg-black/30 z-10" />
-          {/* Bottom Gradient for Name Readability */}
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent z-20" />
-        </div>
 
         {/* Play Button */}
         <div className="absolute inset-0 flex items-center justify-center z-30 p-0 border-0 bg-transparent">
@@ -68,10 +55,6 @@ export default function VideoTestimonial({
 }
 
 VideoTestimonial.propTypes = {
-  thumbnail: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
-  }).isRequired,
   patientName: PropTypes.string.isRequired,
   treatment: PropTypes.string.isRequired,
   videoUrl: PropTypes.string.isRequired,

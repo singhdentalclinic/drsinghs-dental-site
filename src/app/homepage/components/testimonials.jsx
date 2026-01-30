@@ -7,6 +7,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import NextPageButton from '@/components/ui/nextpagebutton';
 import Icon from '@/components/ui/AppIcon';
 import VideoModal from '@/components/ui/VideoModal';
+import { staggerContainer, fadeInUp } from '@/utils/AnimationVariants';
 
 const testimonials = [
   {
@@ -23,8 +24,8 @@ const testimonials = [
   },
   {
     id: 3,
-    name: 'Flur',
-    treatment: 'Tooth Ache',
+    name: 'Abha Jain',
+    treatment: 'Tooth Implant',
     videoUrl: 'https://www.youtube.com/shorts/5p9P_x_CIsU',
   },
   {
@@ -50,7 +51,7 @@ export default function VideoTestimonials() {
   };
 
   return (
-    <section ref={sectionRef} className="py-10 relative">
+    <section ref={sectionRef} className="pt-1 pb-10 relative overflow-hidden">
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -65,33 +66,57 @@ export default function VideoTestimonials() {
         }}
       />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-4">
+        <motion.div
+          className="text-center mb-12"
+          variants={staggerContainer(0.08)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div
+            variants={fadeInUp}
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-4"
+          >
             <Icon name="StarIcon" size={20} variant="solid" />
             <span className="font-body text-sm md:text-base font-medium">Testimonials</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+          </motion.div>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight"
+          >
             Hear from Our Patients
-          </h2>
-          <p className="font-body text-base md:text-lg text-text-secondary max-w-3xl mx-auto mt-4">
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="font-body text-base md:text-lg text-text-secondary max-w-3xl mx-auto mt-4"
+          >
             Smiles transformed, fears eased, and confidence restored. Hear directly from our
             patients about their experience with our expert dental care.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pt-6 pb-12 md:grid md:grid-cols-4 md:gap-6 md:pb-12 max-w-5xl mx-auto scrollbar-hide px-4">
+        <motion.div
+          className="flex overflow-x-auto snap-x snap-mandatory gap-4 pt-6 pb-4 md:grid md:grid-cols-4 md:gap-6 md:pb-12 max-w-5xl mx-auto scrollbar-hide px-4"
+          variants={staggerContainer(0.1)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.3, margin: "-50px" }}
+        >
           {testimonials.map((testimonial) => {
             const videoId = testimonial.videoUrl.includes('shorts/')
               ? testimonial.videoUrl.split('shorts/')[1]?.split('?')[0]
               : testimonial.videoUrl.split('v=')[1]?.split('&')[0];
 
             return (
-              <div
+              <motion.div
                 key={testimonial.id}
+                variants={fadeInUp}
+                whileHover={{ scale: 1.02 }}
                 className="flex-shrink-0 w-[70vw] sm:w-[50vw] md:w-auto snap-center"
+                style={{ willChange: 'transform, opacity, filter' }}
               >
                 <div
-                  className="group relative bg-black rounded-[2rem] shadow-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.02] aspect-[3/4]"
+                  className="group relative bg-black rounded-[2rem] shadow-xl overflow-hidden cursor-pointer aspect-[3/4]"
                   onClick={() => openVideo(testimonial.videoUrl)}
                 >
                   {/* Background Video (Muted Autoplay) */}
@@ -103,16 +128,7 @@ export default function VideoTestimonials() {
                     />
                   </div>
 
-                  {/* Fallback/Overlay Image */}
-                  <Image
-                    src={testimonial.thumbnail || '/assets/images/placeholder.svg'}
-                    alt={testimonial.name}
-                    fill
-                    className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay pointer-events-none"
-                    sizes="(max-width: 768px) 70vw, 25vw"
-                  />
-
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-black/10 transition-colors duration-300 group-hover:bg-transparent" />
 
                   <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
 
@@ -129,64 +145,74 @@ export default function VideoTestimonials() {
                   </h4>
                   <p className="text-sm font-semibold text-primary">{testimonial.treatment}</p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
-
-        <div className="flex justify-center mt-12">
-          <NextPageButton href="/patient-stories">View More</NextPageButton>
-        </div>
+        </motion.div>
       </div>
 
+      <div className="w-full px-4 md:px-6 lg:px-8 mt-4 md:mt-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6 md:gap-0 min-h-[80px]">
+          {/* Google Review Card Cluster - Extreme Left */}
+          <div className="flex justify-start">
+            <AnimatePresence>
+              {isInView && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, x: -10 }}
+                  animate={{ opacity: 1, y: 0, x: 0 }}
+                  exit={{ opacity: 0, y: 10, x: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="z-50"
+                >
+                  <a
+                    href="https://g.page/r/Cdl5btRrYBwjEBM/review"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white rounded-xl shadow-2xl border border-gray-100 p-4 flex items-center space-x-3 w-[210px] hover:bg-gray-50 transition-colors cursor-pointer"
+                  >
+                    <div className="bg-white p-1 rounded-full shrink-0 relative w-8 h-8">
+                      <Image
+                        src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                        alt="Google"
+                        fill
+                        className="object-contain p-1"
+                        sizes="32px"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h5 className="text-sm font-bold text-gray-900 truncate">Singh Dental Clinic</h5>
+                      <div className="flex items-center space-x-1 mt-0.5">
+                        <span className="font-bold text-gray-900 leading-none text-sm">4.8</span>
+                        <div className="flex">
+                          {[...Array(5)].map((_, i) => (
+                            <StarIcon key={i} className="w-3 h-3 text-yellow-400" />
+                          ))}
+                        </div>
+                      </div>
+                      <p className="text-[10px] text-gray-500 font-medium mt-0.5 truncate">
+                        Based on all reviews
+                      </p>
+                    </div>
+                  </a>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* View More Button - Center on Screen */}
+          <div className="flex justify-center">
+            <NextPageButton href="/patient-stories">View More</NextPageButton>
+          </div>
+
+          {/* Right Spacer */}
+          <div className="hidden md:block" />
+        </div>
+      </div>
       <VideoModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         videoUrl={selectedVideoUrl}
       />
-
-      <AnimatePresence>
-        {isInView && (
-          <motion.div
-            initial={{ opacity: 0, y: 20, x: -20 }}
-            animate={{ opacity: 1, y: 0, x: 0 }}
-            exit={{ opacity: 0, y: 20, x: -20 }}
-            transition={{ duration: 0.4 }}
-            className="absolute bottom-[200px] left-4 md:left-8 z-50"
-          >
-            <a
-              href="https://g.page/r/Cdl5btRrYBwjEBM/review"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white rounded-xl shadow-2xl border border-gray-100 p-4 flex items-center space-x-3 max-w-[240px] hover:bg-gray-50 transition-colors cursor-pointer block"
-            >
-              <div className="bg-white p-1 rounded-full shrink-0 relative w-8 h-8">
-                <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                  alt="Google"
-                  fill
-                  className="object-contain p-1"
-                  sizes="32px"
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h5 className="text-sm font-bold text-gray-900 truncate">Singh Dental Clinic</h5>
-                <div className="flex items-center space-x-1 mt-0.5">
-                  <span className="font-bold text-gray-900 leading-none text-sm">4.8</span>
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <StarIcon key={i} className="w-3 h-3 text-yellow-400" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-[10px] text-gray-500 font-medium mt-0.5 truncate">
-                  Based on all reviews
-                </p>
-              </div>
-            </a>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

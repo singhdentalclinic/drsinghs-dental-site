@@ -6,35 +6,35 @@ import gsap from 'gsap';
 
 const carouselImages = [
   {
-    src: '/assets/patients_images/Dental_camp.jpg',
+    src: '/assets/images/patients_images/Dental_camp.jpg',
     alt: 'Dental camp at Ramnagar Police station',
   },
   {
-    src: '/assets/clinic/team.jpg',
+    src: '/assets/images/clinic/team.jpg',
     alt: 'Team',
   },
   {
-    src: '/assets/patients_images/patient-1.jpg',
+    src: '/assets/images/patients_images/patient-1.jpg',
     alt: 'Root Canal Treatment',
   },
   {
-    src: '/assets/patients_images/patient-4.jpeg',
+    src: '/assets/images/patients_images/patient-4.jpeg',
     alt: 'Dental Implants',
   },
   {
-    src: '/assets/patients_images/patient-2.jpg',
+    src: '/assets/images/patients_images/patient-2.jpg',
     alt: 'Cosmetic Dentistry',
   },
   {
-    src: '/assets/patients_images/patient-3.jpg',
+    src: '/assets/images/patients_images/patient-3.jpg',
     alt: 'Preventive Care',
   },
   {
-    src: '/assets/patients_images/patient-5.jpeg',
+    src: '/assets/images/patients_images/patient-5.jpeg',
     alt: 'Pediatric Dentistry',
   },
   {
-    src: '/assets/patients_images/patient-6.jpeg',
+    src: '/assets/images/patients_images/patient-6.jpeg',
     alt: 'Emergency Care',
   },
 ];
@@ -99,19 +99,19 @@ export default function ImagesCarousel() {
             'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
         }}
       >
-        <div ref={trackRef} className="carousel-track flex gap-6 w-max">
+        <div ref={trackRef} className="carousel-track flex gap-4 md:gap-6 w-max">
           {/* Double the images to create seamless loop */}
           {[...carouselImages, ...carouselImages].map((img, index) => (
             <div
               key={index}
-              className="relative w-[300px] h-[200px] md:w-[300px] md:h-[180px] flex-shrink-0 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="relative w-[200px] h-[130px] md:w-[300px] md:h-[180px] flex-shrink-0 rounded-xl md:rounded-2xl overflow-hidden shadow-md md:shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
                 className="object-cover hover:scale-102 transition-transform duration-500"
-                sizes="(max-width: 768px) 300px, 300px"
+                sizes="(max-width: 768px) 200px, 300px"
               />
             </div>
           ))}

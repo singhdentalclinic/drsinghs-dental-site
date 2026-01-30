@@ -4,27 +4,36 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '@/components/ui/AppIcon';
 import { motion, AnimatePresence } from 'framer-motion';
+import { staggerContainer, fadeInUp } from '@/utils/AnimationVariants';
 
 const DesktopLayout = ({ faqData, activeIndex, setActiveIndex }) => (
-  <div className="hidden lg:grid grid-cols-12 gap-12 items-start">
+  <motion.div
+    className="hidden lg:grid grid-cols-12 gap-12 items-start"
+    variants={staggerContainer(0.05)}
+    initial="initial"
+    whileInView="animate"
+    viewport={{ once: true, amount: 0.1 }}
+  >
     {/* Left Column: Questions List */}
     <div className="col-span-12 lg:col-span-5 space-y-2">
       {faqData?.questions?.map((item, index) => (
-        <div key={index} className="group/item">
+        <motion.div
+          key={index}
+          className="group/item"
+          variants={fadeInUp}
+        >
           <button
             onClick={() => setActiveIndex(index)}
-            className={`w-full text-left py-4 px-5 rounded-lg transition-all duration-300 flex items-center justify-between group ${
-              activeIndex === index
-                ? 'bg-white shadow-elevation-sm border-l-4 border-primary'
-                : 'hover:bg-white/50 border-l-4 border-transparent'
-            }`}
+            className={`w-full text-left py-4 px-5 rounded-lg transition-all duration-300 flex items-center justify-between group ${activeIndex === index
+              ? 'bg-white shadow-elevation-sm border-l-4 border-primary'
+              : 'hover:bg-white/50 border-l-4 border-transparent'
+              }`}
           >
             <span
-              className={`font-body font-medium text-base transition-colors ${
-                activeIndex === index
-                  ? 'text-primary'
-                  : 'text-text-primary group-hover:text-primary'
-              }`}
+              className={`font-body font-medium text-base transition-colors ${activeIndex === index
+                ? 'text-primary'
+                : 'text-text-primary group-hover:text-primary'
+                }`}
             >
               {item.question}
             </span>
@@ -44,12 +53,12 @@ const DesktopLayout = ({ faqData, activeIndex, setActiveIndex }) => (
               />
             )}
           </AnimatePresence>
-        </div>
+        </motion.div>
       ))}
     </div>
 
     {/* Right Column: Answer Display */}
-    <div className="col-span-12 lg:col-span-7">
+    <motion.div className="col-span-12 lg:col-span-7" variants={fadeInUp}>
       <div className="relative min-h-[300px]">
         <AnimatePresence mode="wait">
           <motion.div
@@ -74,34 +83,42 @@ const DesktopLayout = ({ faqData, activeIndex, setActiveIndex }) => (
           </motion.div>
         </AnimatePresence>
       </div>
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 );
 
 const MobileLayout = ({ faqData }) => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <div className="lg:hidden space-y-4">
+    <motion.div
+      className="lg:hidden space-y-4"
+      variants={staggerContainer(0.05)}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, amount: 0.1 }}
+    >
       {faqData?.questions?.map((item, index) => (
-        <div key={index} className="relative">
+        <motion.div
+          key={index}
+          className="relative"
+          variants={fadeInUp}
+        >
           <button
             onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
             className="w-full flex items-center justify-between py-4 text-left transition-all duration-200 group"
           >
             <span
-              className={`font-body font-medium text-sm md:text-base pr-4 group-hover:text-primary transition-colors ${
-                openIndex === index ? 'text-primary' : 'text-text-primary'
-              }`}
+              className={`font-body font-medium text-sm md:text-base pr-4 group-hover:text-primary transition-colors ${openIndex === index ? 'text-primary' : 'text-text-primary'
+                }`}
             >
               {item.question}
             </span>
             <span
-              className={`flex-shrink-0 transition-transform duration-200 ${
-                openIndex === index
-                  ? 'rotate-180 text-primary'
-                  : 'text-text-secondary group-hover:text-primary'
-              }`}
+              className={`flex-shrink-0 transition-transform duration-200 ${openIndex === index
+                ? 'rotate-180 text-primary'
+                : 'text-text-secondary group-hover:text-primary'
+                }`}
             >
               <Icon name="ChevronDownIcon" size={20} variant="outline" />
             </span>
@@ -131,9 +148,9 @@ const MobileLayout = ({ faqData }) => {
               />
             )}
           </AnimatePresence>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
@@ -143,15 +160,27 @@ export default function FAQ({ faqData }) {
   return (
     <section className="py-6 md:py-8">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
-          <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl font-semibold text-text-primary mb-4">
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-10 md:mb-16"
+          variants={staggerContainer(0.1)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.h2
+            variants={fadeInUp}
+            className="font-headline text-2xl md:text-3xl lg:text-4xl font-semibold text-text-primary mb-4"
+          >
             {faqData?.title || 'Frequently Asked Questions'}
-          </h2>
-          <p className="font-body text-base text-text-secondary">
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="font-body text-base text-text-secondary"
+          >
             {faqData?.description ||
               'Find answers to common questions about our dental services and appointments.'}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <DesktopLayout
           faqData={faqData}

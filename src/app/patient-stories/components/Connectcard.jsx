@@ -17,7 +17,6 @@ export default function InstagramConnect() {
     {
       type: 'video',
       src: '/assets/videos/Dental_education-2.mp4',
-      poster: '/assets/images/thumbnails/video_testimonial_thumbnail-1.png',
       rotate: '6deg',
       style: { top: '5%', left: '30%' },
     },
@@ -56,7 +55,6 @@ export default function InstagramConnect() {
     {
       type: 'video',
       src: '/assets/videos/Dental_education-3.mp4',
-      poster: '/assets/images/thumbnails/video_testimonial_thumbnail-1.png',
       rotate: '8deg',
       style: { bottom: '5%', left: '8%' },
     },
@@ -103,7 +101,6 @@ export default function InstagramConnect() {
     {
       type: 'video',
       src: '/assets/videos/Dental_education.mp4',
-      poster: '/img/video-thumb-2.jpg',
       rotate: '-5deg',
       style: { top: '32%', right: '2%' },
     },
@@ -136,7 +133,6 @@ export default function InstagramConnect() {
     {
       type: 'video',
       src: '/assets/videos/Dental_education-4.mp4',
-      poster: '/img/video-thumb-2.jpg',
       rotate: '-10deg',
       style: { bottom: '-2%', right: '45%' },
     },
@@ -186,7 +182,6 @@ export default function InstagramConnect() {
             ) : (
               <video
                 src={item.src}
-                poster={item.poster}
                 muted
                 loop
                 autoPlay

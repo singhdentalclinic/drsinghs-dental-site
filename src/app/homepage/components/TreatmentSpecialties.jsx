@@ -1,38 +1,69 @@
+'use client';
+
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import Icon from '@/components/ui/AppIcon';
 import AppImage from '@/components/ui/AppImage';
 import NextPageButton from '@/components/ui/nextpagebutton';
+import { staggerContainer, fadeInUp } from '@/utils/AnimationVariants';
 
 export default function TreatmentSpecialties({ treatments }) {
   return (
-    <section className="py-6 md:py-8 lg:py-10">
+    <section className="py-6 md:py-8 lg:py-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="text-center mb-8 md:mb-12 lg:mb-16">
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-4">
+        <motion.div
+          className="text-center mb-8 md:mb-12 lg:mb-16"
+          variants={staggerContainer(0.08)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div
+            variants={fadeInUp}
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-4"
+          >
             <Icon name="SparklesIcon" size={20} variant="solid" />
             <span className="font-body text-sm md:text-base font-medium">Our Specialties</span>
-          </div>
-          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-semibold text-text-primary mb-4">
+          </motion.div>
+          <motion.h2
+            variants={fadeInUp}
+            className="font-headline text-3xl md:text-4xl lg:text-5xl font-semibold text-text-primary mb-4"
+          >
             Comprehensive Dental Solutions
-          </h2>
-          <p className="font-body text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="font-body text-base md:text-lg text-text-secondary max-w-3xl mx-auto"
+          >
             From routine checkups to advanced procedures, we offer complete dental care with
             painless treatments and modern technology
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="flex overflow-x-auto gap-6 -mx-4 px-4 pt-6 pb-6 snap-x snap-mandatory scroll-smooth touch-pan-x scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8 sm:mx-0 sm:px-0 sm:pt-0 sm:overflow-visible sm:snap-none sm:pb-0">
+        <motion.div
+          className="flex overflow-x-auto gap-6 -mx-4 px-4 pt-6 pb-6 snap-x snap-mandatory scroll-smooth touch-pan-x scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8 sm:mx-0 sm:px-0 sm:pt-0 sm:overflow-visible sm:snap-none sm:pb-0"
+          variants={staggerContainer(0.06)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.15 }}
+        >
           {treatments?.map((treatment) => (
-            <div
+            <motion.div
               key={treatment?.id}
-              className="flex-none w-[85vw] snap-center sm:w-auto group bg-white rounded-xl border border-gray-100 shadow-elevation-sm hover:shadow-elevation-lg transform transition-all duration-normal ease-in-out hover:-translate-y-1 overflow-hidden"
+              variants={fadeInUp}
+              whileHover={{
+                y: -6,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              className="flex-none w-[85vw] snap-center sm:w-auto group bg-white rounded-xl border border-gray-100 shadow-elevation-sm overflow-hidden"
+              style={{ willChange: 'transform, opacity, filter' }}
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <AppImage
                   src={treatment?.image}
                   alt={treatment?.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-normal"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
@@ -79,13 +110,19 @@ export default function TreatmentSpecialties({ treatments }) {
                   <Icon name="ArrowRightIcon" size={16} variant="outline" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center mt-8 md:mt-12">
+        <motion.div
+          className="text-center mt-8 md:mt-12"
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <NextPageButton href="/services">View All Services</NextPageButton>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

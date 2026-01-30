@@ -102,36 +102,39 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h3 className="font-headline text-lg font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-2">
-              {footerLinks?.services?.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    href={link?.path}
-                    className="font-body text-sm text-white/80 hover:text-white transition-colors duration-fast"
-                  >
-                    {link?.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Grouping Services and Quick Links to keep them side-by-side on mobile */}
+          <div className="grid grid-cols-2 gap-8 lg:contents">
+            <div>
+              <h3 className="font-headline text-lg font-semibold mb-4">Our Services</h3>
+              <ul className="space-y-2">
+                {footerLinks?.services?.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link?.path}
+                      className="font-body text-sm text-white/80 hover:text-white transition-colors duration-fast"
+                    >
+                      {link?.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="font-headline text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {footerLinks?.quickLinks?.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    href={link?.path}
-                    className="font-body text-sm text-white/80 hover:text-white transition-colors duration-fast"
-                  >
-                    {link?.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <h3 className="font-headline text-lg font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                {footerLinks?.quickLinks?.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link?.path}
+                      className="font-body text-sm text-white/80 hover:text-white transition-colors duration-fast"
+                    >
+                      {link?.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div>
