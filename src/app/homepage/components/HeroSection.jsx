@@ -8,6 +8,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { staggerContainer, fadeInUp } from '@/utils/AnimationVariants';
+
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -98,7 +100,13 @@ const ReviewCard = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <motion.div
+      className="relative"
+      variants={fadeInUp}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       {/* Dynamic Glow Background */}
       <div
         ref={glowRef}
@@ -141,7 +149,7 @@ const ReviewCard = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -164,10 +172,6 @@ export default function HeroSection({ stats }) {
   }, [slides.length]);
   useEffect(() => {
     resetAutoSlide();
-    // Reset swipe state after a delay to ensure next transition (if auto or click) uses default duration
-    // But for the current transition (triggered by swipe), we want it to remain true until animation starts.
-    // Actually, simply resetting it here (after render) works because the exit/enter animation props are read during render.
-    // However, we need to ensure we don't reset it too quickly if it causes issues, but usually effect runs after commit.
     if (isSwipe) {
       const timer = setTimeout(() => setIsSwipe(false), 1000); // Reset after 1 second
       return () => clearTimeout(timer);
@@ -284,11 +288,10 @@ export default function HeroSection({ stats }) {
                 resetAutoSlide();
                 setCurrentSlideIndex(idx);
               }}
-              className={`relative h-1.5 md:h-2 rounded-full overflow-hidden cursor-pointer transition-all duration-500 ease-in-out shadow-sm ${
-                idx === currentSlideIndex
-                  ? 'w-8 md:w-12 bg-white/70'
-                  : 'w-1.5 md:w-2 bg-white/30 hover:bg-white'
-              }`}
+              className={`relative h-1.5 md:h-2 rounded-full overflow-hidden cursor-pointer transition-all duration-500 ease-in-out shadow-sm ${idx === currentSlideIndex
+                ? 'w-8 md:w-12 bg-white/70'
+                : 'w-1.5 md:w-2 bg-white/30 hover:bg-white'
+                }`}
               aria-label={`Go to slide ${idx + 1}`}
             >
               {idx === currentSlideIndex && (
@@ -307,18 +310,13 @@ export default function HeroSection({ stats }) {
 
       <div className="w-full bg-blue-50 border-t border-slate-100 py-2 relative z-10 overflow-hidden isolate">
         <div className="w-full lg:max-w-none mx-auto px-4 md:px-6 lg:px-12">
-          {/* Mobile Vertical Carousel (< lg) */}
           {/* Mobile Infinite Horizontal Marquee (< lg) */}
           <div className="lg:hidden relative flex items-center overflow-hidden h-12 mask-linear">
-            {/* 
-               We render the items twice to create an infinite loop effect.
-               The container moves to -50% (the width of one set of items) and then resets to 0 instantly.
-            */}
             <motion.div
               className="flex items-center gap-8 whitespace-nowrap pr-8"
               animate={{ x: '-50%' }}
               transition={{
-                duration: 20, // Adjust speed as needed
+                duration: 20,
                 ease: 'linear',
                 repeat: Infinity,
                 repeatType: 'loop',
@@ -359,12 +357,11 @@ export default function HeroSection({ stats }) {
                   {
                     icon: 'ChatBubbleBottomCenterTextIcon',
                     value: `${stats?.reviews}+`,
-                    label: 'Reviews',
-                    sub: 'Patients',
+                    label: 'Stars',
+                    sub: 'Reviews',
                   },
                 ].map((item, index) => (
                   <div key={`${i}-${index}`} className="flex items-center gap-2 rounded-md">
-                    {/* ICON / LOGO CONTAINER */}
                     <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
                       {item.logo ? (
                         <div className="relative w-full h-full">
@@ -385,7 +382,6 @@ export default function HeroSection({ stats }) {
                         />
                       )}
                     </div>
-                    {/* TEXT */}
                     <div>
                       <div className="flex items-baseline gap-1 leading-tight">
                         <span className="text-sm font-bold text-blue-700">{item.value}</span>
@@ -402,7 +398,13 @@ export default function HeroSection({ stats }) {
           </div>
 
           {/* Desktop Horizontal Layout (>= lg) */}
-          <div className="hidden lg:flex items-center justify-between gap-4">
+          <motion.div
+            className="hidden lg:flex items-center justify-between gap-4"
+            variants={staggerContainer(0.1, 0.2)}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {[
               {
                 icon: 'UserIcon',
@@ -441,13 +443,11 @@ export default function HeroSection({ stats }) {
                 sub: 'Patients',
               },
             ].map((item, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="
-            flex items-center gap-2 group
-          "
+                variants={fadeInUp}
+                className="flex items-center gap-2 group"
               >
-                {/* ICON / LOGO CONTAINER */}
                 <div className="w-10 h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                   {item.logo ? (
                     <div className="relative w-full h-full">
@@ -469,7 +469,6 @@ export default function HeroSection({ stats }) {
                   )}
                 </div>
 
-                {/* TEXT */}
                 <div>
                   <div className="flex items-baseline gap-1 leading-tight">
                     <span className="text-base font-bold text-blue-700">{item.value}</span>
@@ -477,12 +476,12 @@ export default function HeroSection({ stats }) {
                   </div>
                   <p className="text-[13px] text-slate-500 font-medium leading-tight">{item.sub}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
-      <div className="w-full bg-white pt-2 pb-16 relative z-10">
+      <div className="w-full bg-transparent pt-1 pb-4 relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <ReviewCard />
         </div>
@@ -493,9 +492,11 @@ export default function HeroSection({ stats }) {
 
 HeroSection.propTypes = {
   stats: PropTypes.shape({
-    experience: PropTypes.number.isRequired,
-    patients: PropTypes.number.isRequired,
-    rating: PropTypes.number.isRequired,
-    reviews: PropTypes.number.isRequired,
+    experience: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+    patients: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+    rating: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+    reviews: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+    implants: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+    crowns: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   }).isRequired,
 };

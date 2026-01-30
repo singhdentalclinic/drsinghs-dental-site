@@ -36,8 +36,8 @@ main {
 
 .toggle {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -64,34 +64,35 @@ main {
 }
 
 /* Note: The + selector requires the input to be immediately before the .toggle label */
-#mobile-menu-checkbox:checked + .toggle .bars {
+#mobile-menu-checkbox:checked+.toggle .bars {
   position: absolute;
   transition-duration: 0.5s;
 }
 
-#mobile-menu-checkbox:checked + .toggle #bar2 {
+#mobile-menu-checkbox:checked+.toggle #bar2 {
   transform: scaleX(0);
   transition-duration: 0.5s;
 }
 
-#mobile-menu-checkbox:checked + .toggle #bar1 {
+#mobile-menu-checkbox:checked+.toggle #bar1 {
   width: 100%;
   transform: rotate(45deg);
   transition-duration: 0.5s;
 }
 
-#mobile-menu-checkbox:checked + .toggle #bar3 {
+#mobile-menu-checkbox:checked+.toggle #bar3 {
   width: 100%;
   transform: rotate(-45deg);
   transition-duration: 0.5s;
 }
 
-#mobile-menu-checkbox:checked + .toggle {
+#mobile-menu-checkbox:checked+.toggle {
   transition-duration: 0.5s;
   transform: rotate(180deg);
 }
 
 @keyframes wiggle {
+
   0%,
   100% {
     transform: rotate(-6deg);
@@ -114,6 +115,8 @@ main {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

@@ -109,10 +109,6 @@ export default function PatientStoriesPage() {
     {
       id: 'vt1',
       categoryId: 'root-canal',
-      thumbnail: {
-        url: '/assets/images/thumbnails/video_testimonial_thumbnail-1.png',
-        alt: 'Middle-aged Indian woman in blue shirt smiling at camera in dental clinic setting',
-      },
       patientName: 'Flur',
       treatment: 'Root Canal Treatment',
       videoUrl: 'https://youtube.com/shorts/ZpaHcfp1rMA', // Example Shorts URL format
@@ -121,10 +117,6 @@ export default function PatientStoriesPage() {
     {
       id: 'vt2',
       categoryId: 'dental-implants',
-      thumbnail: {
-        url: 'https://img.rocket.new/generatedImages/rocket_gen_img_17c989f9e-1763293351359.png',
-        alt: 'Young Indian professional man in white shirt smiling confidently at camera',
-      },
       patientName: 'Amit Gupta',
       treatment: 'Complete Dental Implant Journey',
       videoUrl: '/assets/videos/Clinic.mp4',
@@ -133,10 +125,6 @@ export default function PatientStoriesPage() {
     {
       id: 'vt3',
       categoryId: 'cosmetic',
-      thumbnail: {
-        url: 'https://img.rocket.new/generatedImages/rocket_gen_img_149ddede3-1765121383698.png',
-        alt: 'Young Indian woman with long dark hair smiling brightly showing white teeth',
-      },
       patientName: 'Kavita Nair',
       treatment: 'Smile Transformation Experience',
       videoUrl: '/assets/videos/Dental_education.mp4',
@@ -145,10 +133,6 @@ export default function PatientStoriesPage() {
     {
       id: 'vt4',
       categoryId: 'orthodontics',
-      thumbnail: {
-        url: 'https://img.rocket.new/generatedImages/rocket_gen_img_11ca0f56f-1763296594616.png',
-        alt: 'Young student sharing her invisalign experience',
-      },
       patientName: 'Priya Singh',
       treatment: 'Invisalign Journey',
       videoUrl: 'https://www.youtube.com/shorts/Pd99lqg',
@@ -157,10 +141,6 @@ export default function PatientStoriesPage() {
     {
       id: 'vt5',
       categoryId: 'preventive',
-      thumbnail: {
-        url: 'https://img.rocket.new/generatedImages/rocket_gen_img_1927cf9a3-1763293370228.png',
-        alt: 'Senior patient talking about dental care',
-      },
       patientName: 'Rajesh Malhotra',
       treatment: 'Senior Dental Care',
       videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
@@ -169,10 +149,6 @@ export default function PatientStoriesPage() {
     {
       id: 'vt6',
       categoryId: 'dental-implants',
-      thumbnail: {
-        url: 'https://img.rocket.new/generatedImages/rocket_gen_img_12fa653f0-1763300100712.png',
-        alt: 'Patient smiling after implant surgery',
-      },
       patientName: 'Meera Patel',
       treatment: 'Full Mouth Implants',
       videoUrl: 'https://www.youtube.com/shorts/Pd99lqg',
@@ -454,14 +430,14 @@ export default function PatientStoriesPage() {
               </h2>
               <p className="font-body text-base md:text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
                 Join hundreds of satisfied patients who have transformed their smiles at Singh
-                Dental Center. Book your consultation today and experience the difference.
+                Dental Center. Book your appointment today and experience the difference.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/book-appointment"
                   className="w-full sm:w-auto px-8 py-4 bg-conversion hover:bg-conversion/90 text-conversion-foreground font-cta text-base md:text-lg font-semibold rounded-lg shadow-elevation-md hover:shadow-elevation-lg transition-all duration-fast hover:-translate-y-0.5"
                 >
-                  Book Your Consultation
+                  Book Your Appointment
                 </Link>
                 <Link
                   href="/contact"

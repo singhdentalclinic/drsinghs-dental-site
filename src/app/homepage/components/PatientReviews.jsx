@@ -7,6 +7,7 @@ import { StarIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
+import { staggerContainer, fadeInUp } from '@/utils/AnimationVariants';
 
 // Helper to split array into N balanced chunks
 const splitArray = (array, numParts) => {
@@ -49,7 +50,6 @@ ReviewCard.propTypes = {
 
 const ReviewColumn = ({ reviews, duration = '30s', className = '' }) => {
   // Triple duplication ensures we never run out of scroll content before the loop resets
-  // even on very tall screens.
   const columnContent = [...reviews, ...reviews, ...reviews];
 
   return (
@@ -61,9 +61,6 @@ const ReviewColumn = ({ reviews, duration = '30s', className = '' }) => {
           'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
       }}
     >
-      {/* 
-        CSS Animation is closer to the metal and usually smoother for simple marquees 
-      */}
       <div
         className="w-full will-change-transform"
         style={{
@@ -109,19 +106,32 @@ export default function PatientReviews({ reviews }) {
       `}</style>
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16 md:mb-20 flex flex-col items-center">
-          {/* Top Label */}
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-4">
+        <motion.div
+          className="text-center mb-16 md:mb-20 flex flex-col items-center"
+          variants={staggerContainer(0.1)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div
+            variants={fadeInUp}
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-4"
+          >
             <Icon name="SparklesIcon" size={20} variant="solid" />
             <span className="font-body text-sm md:text-base font-medium">Patient Reviews</span>
-          </div>
+          </motion.div>
 
-          <h2 className="font-headline text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 tracking-tight mb-8">
+          <motion.h2
+            variants={fadeInUp}
+            className="font-headline text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 tracking-tight mb-8"
+          >
             What Our Patients Say
-          </h2>
+          </motion.h2>
 
-          {/* Rating Row */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+          >
             <div className="flex space-x-1">
               {[...Array(5)].map((_, i) => (
                 <Icon
@@ -137,36 +147,52 @@ export default function PatientReviews({ reviews }) {
               <span className="text-3xl font-bold text-gray-900">4.8/5</span>
               <span className="text-lg text-gray-500 font-medium">(from all reviews)</span>
             </div>
+          </motion.div>
+
+          <motion.p
+            variants={fadeInUp}
+            className="font-body text-gray-500 text-lg md:text-xl max-w-2xl mx-auto"
+          >
+            Trusted by thousands of patients across Country
+          </motion.p>
+        </motion.div>
+
+        {/* 
+          Main Grid Wrapper Triggered sequentially
+        */}
+        <motion.div
+          variants={staggerContainer(0.2)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          <div className="block md:hidden">
+            <motion.div variants={fadeInUp}>
+              <ReviewColumn reviews={reviews1Col[0]} duration="50s" />
+            </motion.div>
           </div>
 
-          <p className="font-body text-gray-500 text-lg md:text-xl max-w-2xl mx-auto">
-            Trusted by thousands of patients across Country
-          </p>
-        </div>
+          <div className="hidden md:grid md:grid-cols-2 gap-6 lg:hidden">
+            <motion.div variants={fadeInUp}>
+              <ReviewColumn reviews={reviews2Col[0]} duration="22s" />
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <ReviewColumn reviews={reviews2Col[1]} duration="20s" className="pt-20" />
+            </motion.div>
+          </div>
 
-        {/* 
-          Mobile Layout (1 Column) 
-        */}
-        <div className="block md:hidden">
-          <ReviewColumn reviews={reviews1Col[0]} duration="50s" />
-        </div>
-
-        {/* 
-          Tablet Layout (2 Columns) 
-        */}
-        <div className="hidden md:grid md:grid-cols-2 gap-6 lg:hidden">
-          <ReviewColumn reviews={reviews2Col[0]} duration="22s" />
-          <ReviewColumn reviews={reviews2Col[1]} duration="20s" className="pt-20" />
-        </div>
-
-        {/* 
-          Desktop Layout (3 Columns)
-        */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-8">
-          <ReviewColumn reviews={reviews3Col[0]} duration="15s" />
-          <ReviewColumn reviews={reviews3Col[1]} duration="12s" className="pt-32" />
-          <ReviewColumn reviews={reviews3Col[2]} duration="8s" className="pt-10" />
-        </div>
+          <div className="hidden lg:grid lg:grid-cols-3 gap-8">
+            <motion.div variants={fadeInUp}>
+              <ReviewColumn reviews={reviews3Col[0]} duration="15s" />
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <ReviewColumn reviews={reviews3Col[1]} duration="12s" className="pt-32" />
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <ReviewColumn reviews={reviews3Col[2]} duration="8s" className="pt-10" />
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
 
       <AnimatePresence>

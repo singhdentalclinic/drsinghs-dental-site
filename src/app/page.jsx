@@ -23,11 +23,11 @@ export default function Home() {
   const pageData = {
     stats: {
       experience: 20,
-      patients: 5000,
-      implants: 5000,
-      crowns: 8000,
+      patients: '5L',
+      implants: '60K',
+      crowns: '2L',
       rating: 4.8,
-      reviews: 384,
+      reviews: '4.8',
     },
     heroData: {
       testimonials: [
@@ -159,7 +159,7 @@ export default function Home() {
       alt: 'Dr. Pradeep Singh, experienced Indian dentist in his 50s wearing white medical coat and stethoscope, smiling warmly in modern dental clinic',
       highlights: [
         '20+ years clinical excellence',
-        '5000+ successful implants',
+        '60k+ successful implants',
         'Specialized in painless procedures',
         'Advanced endodontic expertise',
       ],
@@ -221,7 +221,7 @@ export default function Home() {
 
     overallRating: {
       rating: 4.8,
-      totalReviews: 384,
+      totalReviews: '4.8',
     },
     features: [
       {
@@ -276,11 +276,25 @@ export default function Home() {
 
     ctaData: {
       title: 'Ready to Transform Your Smile?',
-      subtitle:
+      description:
         'Book your appointment today and experience the difference of compassionate, expert dental care.',
-      buttonText: 'Schedule Consultation',
-      buttonLink: '/contact',
-      phone: '+91 84498 30107',
+      services: [
+        'Aligners',
+        'Dental Braces',
+        'Dental Crowns',
+        'Dental Implants',
+        'Dental Veneers',
+        'Dentures',
+        'Gum Treatment',
+        'Kids Dentistry',
+        'Laser Dentistry',
+        'Orthodontics',
+        'Preventive Care',
+        'Root Canal Therapy',
+        'Teeth Whitening',
+        'Tooth Jewel',
+        'Wisdom Tooth Extraction',
+      ],
     },
   };
 
@@ -289,96 +303,78 @@ export default function Home() {
       <BackgroundDisplay />
       <Header transparent={true} />
 
-      <BackgroundTrigger bgClass="bg-white">
-        <ScrollAnimation>
-          <HeroSection stats={pageData?.stats} heroData={pageData?.heroData} />
-        </ScrollAnimation>
+      <BackgroundTrigger bgClass="bg-blue-50/30">
+        <HeroSection stats={pageData?.stats} heroData={pageData?.heroData} />
       </BackgroundTrigger>
 
-      <BackgroundTrigger bgClass="bg-white">
-        <ScrollAnimation>
-          <VideoTestimonials />
-        </ScrollAnimation>
+      <BackgroundTrigger bgClass="bg-blue-50/30">
+        <VideoTestimonials />
       </BackgroundTrigger>
 
       <BackgroundTrigger bgClass="bg-background">
-        <ScrollAnimation>
-          <TreatmentSpecialties treatments={pageData?.treatments} />
-        </ScrollAnimation>
+        <TreatmentSpecialties treatments={pageData?.treatments} />
       </BackgroundTrigger>
 
       <BackgroundTrigger bgClass="bg-white">
-        <ScrollAnimation>
-          <DoctorExpertise doctor={pageData?.doctor} />
-        </ScrollAnimation>
+        <DoctorExpertise doctor={pageData?.doctor} />
       </BackgroundTrigger>
 
       <BackgroundTrigger bgClass="bg-white">
-        <ScrollAnimation>
-          <PatientReviews reviews={pageData?.reviews} overallRating={pageData?.overallRating} />
-        </ScrollAnimation>
+        <PatientReviews reviews={pageData?.reviews} overallRating={pageData?.overallRating} />
       </BackgroundTrigger>
 
       <BackgroundTrigger bgClass="bg-white">
-        <ScrollAnimation>
-          <WhyChooseUs features={pageData?.features} />
-        </ScrollAnimation>
+        <WhyChooseUs features={pageData?.features} />
       </BackgroundTrigger>
 
       <BackgroundTrigger bgClass="bg-background">
-        <ScrollAnimation>
-          <ImagesCarousel />
-        </ScrollAnimation>
+        <ImagesCarousel />
       </BackgroundTrigger>
 
       <BackgroundTrigger bgClass="bg-white">
-        <ScrollAnimation>
-          <AppointmentCTA ctaData={pageData?.ctaData} />
-        </ScrollAnimation>
+        <AppointmentCTA ctaData={pageData?.ctaData} />
       </BackgroundTrigger>
 
       <BackgroundTrigger bgClass="bg-white">
-        <ScrollAnimation>
-          <FAQ
-            faqData={{
-              title: 'Frequently Asked Questions',
-              description:
-                'Everything you need to know before your visit. No confusion, just clarity.',
-              questions: [
-                {
-                  question: 'How do I book an appointment?',
-                  answer:
-                    'Booking is simple! You can use the "Book Appointment" button above, call us directly at +91 84498 30107, or use the "Quick Appointment" form to select your preferred service and date.',
-                },
-                {
-                  question: 'Do you accept walk-ins?',
-                  answer:
-                    'Yes, we welcome walk-ins for emergencies. However, for routine checkups and specific treatments, we highly recommend booking an appointment to avoid waiting times.',
-                },
-                {
-                  question: 'Is the treatment painful?',
-                  answer:
-                    'Not at all. We specialize in painless dentistry using advanced anesthesia and gentle techniques. Our "Patient Comfort First" approach ensures a stress-free experience.',
-                },
-                {
-                  question: 'What are your clinic timings?',
-                  answer:
-                    'We are open Monday to Sunday from 10:00 AM to 07:00 PM. On Fridays, we are open for emergency appointments only from 10:00 AM to 12:00 PM.',
-                },
-                {
-                  question: 'Do you accept insurance?',
-                  answer:
-                    'Yes, we accept major insurance plans. Please contact our front desk with your policy details, and we will help you understand your coverage and benefits.',
-                },
-                {
-                  question: 'What if I need to cancel or reschedule?',
-                  answer:
-                    'We understand plans change. Please give us at least 24 hours notice for cancellations or rescheduling so we can offer the slot to another patient in need.',
-                },
-              ],
-            }}
-          />
-        </ScrollAnimation>
+        <FAQ
+          faqData={{
+            title: 'Frequently Asked Questions',
+            description:
+              'Everything you need to know before your visit. No confusion, just clarity.',
+            questions: [
+              {
+                question: 'How do I book an appointment?',
+                answer:
+                  'Booking is simple! You can use the "Book Appointment" button above, call us directly at +91 84498 30107, or use the "Quick Appointment" form to select your preferred service and date.',
+              },
+              {
+                question: 'Do you accept walk-ins?',
+                answer:
+                  'Yes, we welcome walk-ins for emergencies. However, for routine checkups and specific treatments, we highly recommend booking an appointment to avoid waiting times.',
+              },
+              {
+                question: 'Is the treatment painful?',
+                answer:
+                  'Not at all. We specialize in painless dentistry using advanced anesthesia and gentle techniques. Our "Patient Comfort First" approach ensures a stress-free experience.',
+              },
+              {
+                question: 'What are your clinic timings?',
+                answer:
+                  'We are open Monday to Sunday from 10:00 AM to 07:00 PM. On Fridays, we are open for emergency appointments only from 10:00 AM to 12:00 PM.',
+              },
+              {
+                question: 'Do you accept insurance?',
+                answer:
+                  'Yes, we accept major insurance plans. Please contact our front desk with your policy details, and we will help you understand your coverage and benefits.',
+              },
+              {
+                question: 'What if I need to cancel or reschedule?',
+                answer:
+                  'We understand plans change. Please give us at least 24 hours notice for cancellations or rescheduling so we can offer the slot to another patient in need.',
+              },
+            ],
+          }}
+        />
       </BackgroundTrigger>
 
       <Footer />

@@ -1,29 +1,61 @@
+'use client';
+
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 import Icon from '@/components/ui/AppIcon';
+import { staggerContainer, fadeInUp } from '@/utils/AnimationVariants';
 
 export default function WhyChooseUs({ features }) {
   return (
-    <section className="py-6 md:py-8 lg:py-10">
+    <section className="py-6 md:py-8 lg:py-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="text-center mb-8 md:mb-12 lg:mb-16">
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-4">
+        <motion.div
+          className="text-center mb-8 md:mb-12 lg:mb-16"
+          variants={staggerContainer(0.08)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div
+            variants={fadeInUp}
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-4"
+          >
             <Icon name="ShieldCheckIcon" size={20} variant="solid" />
             <span className="font-body text-sm md:text-base font-medium">Why Choose Us</span>
-          </div>
-          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-semibold text-text-primary mb-4">
+          </motion.div>
+          <motion.h2
+            variants={fadeInUp}
+            className="font-headline text-3xl md:text-4xl lg:text-5xl font-semibold text-text-primary mb-4"
+          >
             Your Comfort, Our Priority
-          </h2>
-          <p className="font-body text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="font-body text-base md:text-lg text-text-secondary max-w-3xl mx-auto"
+          >
             Experience the difference of patient-centered care with modern technology and
             compassionate expertise
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="flex overflow-x-auto gap-6 -mx-4 px-4 pb-6 snap-x snap-mandatory scroll-smooth touch-pan-x scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8 sm:mx-0 sm:px-0 sm:overflow-visible sm:snap-none sm:pb-0">
+        <motion.div
+          className="flex overflow-x-auto gap-6 -mx-4 px-4 pb-6 snap-x snap-mandatory scroll-smooth touch-pan-x scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8 sm:mx-0 sm:px-0 sm:overflow-visible sm:snap-none sm:pb-0"
+          variants={staggerContainer(0.1)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.3, margin: "-50px" }}
+        >
           {features?.map((feature) => (
-            <div
+            <motion.div
               key={feature?.id}
-              className="flex-none w-[85vw] snap-center sm:w-auto bg-white rounded-xl shadow-elevation-sm hover:shadow-elevation-md transition-all duration-normal p-6 md:p-8"
+              variants={fadeInUp}
+              whileHover={{
+                y: -8,
+                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+                borderColor: "rgba(59, 130, 246, 0.1)"
+              }}
+              className="flex-none w-[85vw] snap-center sm:w-auto bg-white rounded-xl p-6 md:p-8 border border-transparent shadow-elevation-sm"
+              style={{ willChange: 'transform, opacity, filter' }}
             >
               <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-4 md:mb-6">
                 <Icon name={feature?.icon} size={32} variant="solid" className="text-white" />
@@ -45,9 +77,9 @@ export default function WhyChooseUs({ features }) {
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
