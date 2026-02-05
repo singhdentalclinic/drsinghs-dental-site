@@ -36,17 +36,17 @@ const DentalImplants = () => {
     {
       title: 'The Advantage of Implants',
       content: `Missing teeth can lead to several oral health issues, including shifted teeth, difficulty chewing, and facial sagging due to bone loss. Implants solve these problems by:
-Ã¢‚¬¢ Restoring full chewing power
-Ã¢‚¬¢ Preventing bone resorption
-Ã¢‚¬¢ Keeping adjacent teeth stable
-Ã¢‚¬¢ Boosting self - confidence with a perfect smile`,
+• Restoring full chewing power
+• Preventing bone resorption
+• Keeping adjacent teeth stable
+• Boosting self-confidence with a perfect smile`,
     },
     {
       title: 'Types of Implant Solutions',
       content: `We offer various implant options tailored to your needs:
-Ã¢‚¬¢ Single Tooth Replacement: A single implant and a crown.
-Ã¢‚¬¢ Multiple Teeth Replacement: Implant - supported bridges.
-Ã¢‚¬¢ All - on - 4 / 6: Total smile restoration for completely edentulous patients using just a few implants to support a full arch.`,
+• Single Tooth Replacement: A single implant and a crown.
+• Multiple Teeth Replacement: Implant-supported bridges.
+• All-on-4 / 6: Total smile restoration for completely edentulous patients using just a few implants to support a full arch.`,
     },
     {
       title: 'High Success Rate',

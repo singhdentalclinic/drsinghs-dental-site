@@ -111,7 +111,8 @@ export default function PatientStoriesPage() {
       categoryId: 'root-canal',
       patientName: 'Flur',
       treatment: 'Root Canal Treatment',
-      videoUrl: 'https://youtube.com/shorts/ZpaHcfp1rMA', // Example Shorts URL format
+      videoUrl: 'https://youtube.com/shorts/ZpaHcfp1rMA',
+      thumbnail: '/assets/images/thumbnails/root-canal-thumb.png',
       location: 'Ramnagar, Uttarakhand',
     },
     {
@@ -120,6 +121,7 @@ export default function PatientStoriesPage() {
       patientName: 'Amit Gupta',
       treatment: 'Complete Dental Implant Journey',
       videoUrl: '/assets/videos/Clinic.mp4',
+      thumbnail: '/assets/images/thumbnails/implant-thumb.png',
       location: 'Haldwani, Uttarakhand',
     },
     {
@@ -128,6 +130,7 @@ export default function PatientStoriesPage() {
       patientName: 'Kavita Nair',
       treatment: 'Smile Transformation Experience',
       videoUrl: '/assets/videos/Dental_education.mp4',
+      thumbnail: '/assets/images/thumbnails/smile-thumb.png',
       location: 'Nainital, Uttarakhand',
     },
     {
@@ -136,6 +139,7 @@ export default function PatientStoriesPage() {
       patientName: 'Priya Singh',
       treatment: 'Invisalign Journey',
       videoUrl: 'https://www.youtube.com/shorts/Pd99lqg',
+      thumbnail: '/assets/images/thumbnails/smile-thumb.png',
       location: 'Rudrapur, Uttarakhand',
     },
     {
@@ -144,6 +148,7 @@ export default function PatientStoriesPage() {
       patientName: 'Rajesh Malhotra',
       treatment: 'Senior Dental Care',
       videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      thumbnail: '/assets/images/thumbnails/root-canal-thumb.png',
       location: 'Ramnagar, Uttarakhand',
     },
     {
@@ -152,6 +157,7 @@ export default function PatientStoriesPage() {
       patientName: 'Meera Patel',
       treatment: 'Full Mouth Implants',
       videoUrl: 'https://www.youtube.com/shorts/Pd99lqg',
+      thumbnail: '/assets/images/thumbnails/implant-thumb.png',
       location: 'Kashipur, Uttarakhand',
     },
   ];

@@ -19,6 +19,9 @@ import DentalBraces from '../dental-braces';
 import Aligners from '../aligners';
 import LaserDentistry from '../laser-dentistry';
 import ToothJewel from '../tooth-jewel';
+import TeethBleaching from '../teeth-bleaching';
+import CBCTScan from '../cbct-scan';
+import DentalRestoration from '../dental-restoration';
 
 const componentsMap = {
   'root-canal-therapy': RootCanal,
@@ -37,6 +40,9 @@ const componentsMap = {
   aligners: Aligners,
   'laser-dentistry': LaserDentistry,
   'tooth-jewel': ToothJewel,
+  'teeth-bleaching': TeethBleaching,
+  'cbct-scan': CBCTScan,
+  'dental-restoration': DentalRestoration,
 };
 
 export async function generateMetadata({ params }) {

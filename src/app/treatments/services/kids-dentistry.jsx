@@ -38,10 +38,10 @@ const KidsDentistry = () => {
     {
       title: 'Our Pediatric Services',
       content: `We offer a comprehensive range of treatments for children:
-Ã¢‚¬¢ Routine Check-ups & Cleanings: gentle examinations to monitor development.
-Ã¢‚¬¢ Fluoride Treatments: to strengthen enamel and resist decay.
-Ã¢‚¬¢ Dental Sealants: protective coatings for molars to prevent cavities.
-Ã¢‚¬¢ Cavity Treatment: painless fillings and restorative care.`,
+• Routine Check-ups & Cleanings: gentle examinations to monitor development.
+• Fluoride Treatments: to strengthen enamel and resist decay.
+• Dental Sealants: protective coatings for molars to prevent cavities.
+• Cavity Treatment: painless fillings and restorative care.`,
     },
     {
       title: 'First Visit Experience',

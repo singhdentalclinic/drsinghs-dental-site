@@ -36,11 +36,11 @@ const DentalCrowns = () => {
     {
       title: 'When do you need a Crown?',
       content: `Crowns are recommended for several reasons:
-Ã¢‚¬¢ To protect a weak tooth from breaking.
-Ã¢‚¬¢ To restore an already broken tooth or a tooth that has been severely worn down.
-Ã¢‚¬¢ To cover and support a tooth with a large filling when there isn't a lot of tooth left.
-Ã¢‚¬¢ To hold a dental bridge in place.
-Ã¢‚¬¢ To cover misshapen or severely discolored teeth.`,
+• To protect a weak tooth from breaking.
+• To restore an already broken tooth or a tooth that has been severely worn down.
+• To cover and support a tooth with a large filling when there isn't a lot of tooth left.
+• To hold a dental bridge in place.
+• To cover misshapen or severely discolored teeth.`,
     },
     {
       title: 'Our Technology',
@@ -54,7 +54,7 @@ const DentalCrowns = () => {
       title="Dental Crowns"
       category="Restorative"
       description="Restore the strength, shape, and appearance of damaged teeth with our high-quality custom crowns. Durable solutions that look and feel just like your natural teeth."
-      image="https://img.rocket.new/generatedImages/rocket_gen_img_16e6d11e1-1766667595503.png"
+      image="/assets/images/treatments/dental_crown.jpeg"
       painlessFeature="Minimal preparation with local anesthesia"
       duration="2 visits over 1 week"
       benefits={benefits}

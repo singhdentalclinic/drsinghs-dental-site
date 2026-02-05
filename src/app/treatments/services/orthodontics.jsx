@@ -35,18 +35,18 @@ const Orthodontics = () => {
     {
       title: 'Benefits Beyond Looks',
       content: `While a straight smile is the most obvious benefit, orthodontic treatment also:
-Ã¢‚¬¢ Improves speech and chewing efficiency
-Ã¢‚¬¢ Prevents uneven tooth wear
-Ã¢‚¬¢ Alleviates jaw joint issues(TMJ)
-Ã¢‚¬¢ Makes oral hygiene significantly easier to maintain`,
+• Improves speech and chewing efficiency
+• Prevents uneven tooth wear
+• Alleviates jaw joint issues (TMJ)
+• Makes oral hygiene significantly easier to maintain`,
     },
     {
       title: 'Treatment Options',
       content: `We offer a full range of orthodontic appliances:
-Ã¢‚¬¢ Traditional Metal Braces: The most proven and cost - effective method.
-Ã¢‚¬¢ Ceramic Braces: Less visible than metal, blending with your natural tooth color.
-Ã¢‚¬¢ Self - Ligating Braces: Faster treatment with fewer adjustment visits.
-Ã¢‚¬¢ Clear Aligners: Virtually invisible, removable trays(like Invisalign).`,
+• Traditional Metal Braces: The most proven and cost-effective method.
+• Ceramic Braces: Less visible than metal, blending with your natural tooth color.
+• Self-Ligating Braces: Faster treatment with fewer adjustment visits.
+• Clear Aligners: Virtually invisible, removable trays (like Invisalign).`,
     },
     {
       title: 'When to Start?',

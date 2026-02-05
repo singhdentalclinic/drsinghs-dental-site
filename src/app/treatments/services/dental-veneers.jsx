@@ -34,17 +34,17 @@ const DentalVeneers = () => {
     {
       title: 'Perfecting Your Smile',
       content: `Veneers are commonly used to fix:
-Ã¢‚¬¢ Teeth that are discolored from root canal treatment or medications
-Ã¢‚¬¢ Teeth that are worn down
-Ã¢‚¬¢ Chipped or broken teeth
-Ã¢‚¬¢ Misaligned, uneven, or irregularly shaped teeth
-Ã¢‚¬¢ Gaps between teeth(diastemas)`,
+• Teeth that are discolored from root canal treatment or medications
+• Teeth that are worn down
+• Chipped or broken teeth
+• Misaligned, uneven, or irregularly shaped teeth
+• Gaps between teeth (diastemas)`,
     },
     {
       title: 'Veneer Materials',
       content: `We offer two main types of veneers:
-Ã¢‚¬¢ Porcelain Veneers: The most popular choice due to their life - like light reflection and superior stain resistance.
-Ã¢‚¬¢ Composite Resin Veneers: A more affordable, faster option that can often be completed in a single visit.`,
+• Porcelain Veneers: The most popular choice due to their lifelike light reflection and superior stain resistance.
+• Composite Resin Veneers: A more affordable, faster option that can often be completed in a single visit.`,
     },
     {
       title: 'A New Smile in Two Visits',

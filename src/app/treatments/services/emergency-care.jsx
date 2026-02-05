@@ -30,11 +30,11 @@ const EmergencyCare = () => {
     {
       title: 'When is it a Dental Emergency?',
       content: `Dental emergencies can be frightening and painful. Knowing when you need immediate care is crucial. Common emergencies include:
-Ã¢‚¬¢ Severe toothache or facial swelling
-Ã¢‚¬¢ A knocked - out or loose permanent tooth
-Ã¢‚¬¢ A cracked, fractured, or broken tooth
-Ã¢‚¬¢ A lost filling or crown causing pain
-Ã¢‚¬¢ Bleeding from the mouth that doesn't stop`,
+• Severe toothache or facial swelling
+• A knocked-out or loose permanent tooth
+• A cracked, fractured, or broken tooth
+• A lost filling or crown causing pain
+• Bleeding from the mouth that doesn't stop`,
     },
     {
       title: 'The Importance of Speed',
@@ -43,9 +43,9 @@ const EmergencyCare = () => {
     },
     {
       title: 'What to Do in an Emergency',
-      content: `Ã¢‚¬¢ Knocked-out Tooth: Handle it by the crown, not the root. Rinse it gently and try to place it back in the socket or keep it in a small container of milk.
-Ã¢‚¬¢ Severe Pain: Rinse with warm water and use a cold compress on the outside of your cheek.Call us immediately.
-Ã¢‚¬¢ Broken Tooth: Save any pieces and rinse your mouth with warm water.`,
+      content: `• Knocked-out Tooth: Handle it by the crown, not the root. Rinse it gently and try to place it back in the socket or keep it in a small container of milk.
+• Severe Pain: Rinse with warm water and use a cold compress on the outside of your cheek. Call us immediately.
+• Broken Tooth: Save any pieces and rinse your mouth with warm water.`,
     },
     {
       title: 'Our Emergency Commitment',

@@ -36,20 +36,20 @@ const RootCanal = () => {
     },
     {
       title: 'Why Do You Need RCT?',
-      content: `The primary goal of RCT is to remove the infected pulp, clean and disinfect the root canals, and Ã˜³Ã™¾Ã˜³ seal the space to prevent further infection. Leaving an infected tooth untreated can lead to severe consequences, including:
-Ã¢‚¬¢ Intense, radiating pain
-Ã¢‚¬¢ Bone loss around the tip of the root
-Ã¢‚¬¢ Swelling that may spread to the face or neck
-Ã¢‚¬¢ Drainage issues from the root`,
+      content: `The primary goal of RCT is to remove the infected pulp, clean and disinfect the root canals, and seal the space to prevent further infection. Leaving an infected tooth untreated can lead to severe consequences, including:
+• Intense, radiating pain
+• Bone loss around the tip of the root
+• Swelling that may spread to the face or neck
+• Drainage issues from the root`,
     },
     {
       title: 'Symptoms to Watch For',
       content: `You may need a root canal if you experience:
-Ã¢‚¬¢ Severe toothache when chewing or applying pressure
-Ã¢‚¬¢ Prolonged sensitivity to hot or cold temperatures
-Ã¢‚¬¢ Discoloration(darkening) of the tooth
-Ã¢‚¬¢ Swelling and tenderness in nearby gums
-Ã¢‚¬¢ A persistent or recurring pimple on the gums`,
+• Severe toothache when chewing or applying pressure
+• Prolonged sensitivity to hot or cold temperatures
+• Discoloration (darkening) of the tooth
+• Swelling and tenderness in nearby gums
+• A persistent or recurring pimple on the gums`,
     },
     {
       title: 'Our Advanced Approach',

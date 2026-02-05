@@ -5,6 +5,7 @@ import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
 export default function VideoTestimonial({
+  thumbnail,
   patientName,
   treatment,
   videoUrl,
@@ -14,12 +15,28 @@ export default function VideoTestimonial({
 }) {
   return (
     <div
-      className={`flex flex-col group w-[280px] md:w-[290px] mx-auto cursor-pointer transition-all duration-500 ease-in-out ${isActive ? 'scale-100' : 'scale-[0.85]'
+      className={`flex flex-col group w-[280px] md:w-[290px] mx-auto transition-all duration-500 ease-in-out ${isActive ? 'scale-100' : 'scale-[0.85]'
         }`}
-      onClick={() => onPlay(videoUrl)}
     >
       {/* Video Content Card */}
-      <div className="relative w-full h-[420px] md:h-[435px] rounded-xl overflow-hidden bg-muted shadow-lg transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2">
+      <div
+        className="relative w-full h-[420px] md:h-[435px] rounded-xl overflow-hidden bg-muted shadow-lg transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2 isolation-isolate transform-gpu"
+        style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
+      >
+        {/* Thumbnail Image */}
+        {thumbnail && (
+          <AppImage
+            src={thumbnail}
+            alt={`${patientName}'s ${treatment} testimonial thumbnail`}
+            fill
+            className="absolute inset-0 z-10 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 transform-gpu"
+            style={{ willChange: 'transform' }}
+            priority={true}
+          />
+        )}
+
+        {/* Overlay Gradient */}
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
 
         {/* Play Button */}
         <div className="absolute inset-0 flex items-center justify-center z-30 p-0 border-0 bg-transparent">

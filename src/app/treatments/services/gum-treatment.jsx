@@ -34,9 +34,9 @@ const GumTreatment = () => {
     {
       title: 'Types of Treatment',
       content: `Depending on the severity of the disease, we offer:
-Ã¢‚¬¢ Scaling and Root Planing: A deep cleaning that removes tartar from below the gum line and smooths the root surfaces.
-Ã¢‚¬¢ Periodontal Maintenance: Regular check - ups and cleanings to manage gum health.
-Ã¢‚¬¢ Laser Gum Therapy: Using advanced lasers to remove diseased tissue and promote healing with minimal discomfort.`,
+• Scaling and Root Planing: A deep cleaning that removes tartar from below the gum line and smooths the root surfaces.
+• Periodontal Maintenance: Regular check-ups and cleanings to manage gum health.
+• Laser Gum Therapy: Using advanced lasers to remove diseased tissue and promote healing with minimal discomfort.`,
     },
     {
       title: 'The Systemic Connection',

@@ -18,31 +18,46 @@ const splitArray = (array, numParts) => {
   return result;
 };
 
-const ReviewCard = ({ review }) => (
-  <div className="bg-white rounded-3xl p-8 mb-6 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] border border-gray-100 hover:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.12)] transition-shadow duration-300 relative z-10 isolate">
-    <div className="flex items-start space-x-4">
-      <div className="relative w-12 h-12 flex-shrink-0 rounded-full overflow-hidden bg-gray-50 border border-gray-100">
-        <AppImage
-          src={review.image}
-          alt={review.alt || review.name}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div>
-        <h3 className="font-headline text-lg font-bold text-gray-900 leading-tight mb-1">
-          {review.name}
-        </h3>
-        {/* Render stars for visually premium feel */}
-        <div className="flex space-x-0.5">
-          {[...Array(5)].map((_, i) => (
-            <Icon key={i} name="StarIcon" size={14} variant="solid" className="text-yellow-400" />
-          ))}
+const ReviewCard = ({ review }) => {
+  const colors = [
+    'bg-emerald-100 text-emerald-600',
+    'bg-sky-100 text-sky-600',
+    'bg-orange-100 text-orange-600',
+    'bg-violet-100 text-violet-600',
+    'bg-rose-100 text-rose-600',
+    'bg-amber-100 text-amber-600',
+    'bg-teal-100 text-teal-600',
+    'bg-indigo-100 text-indigo-600',
+    'bg-fuchsia-100 text-fuchsia-600',
+    'bg-cyan-100 text-cyan-600',
+  ];
+
+  // Simple hash to consistently pick a color for a name
+  const nameHash = review.name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) || 0;
+  const colorClass = colors[nameHash % colors.length];
+
+  return (
+    <div className="bg-white rounded-3xl p-8 mb-6 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] border border-gray-100 hover:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.12)] transition-shadow duration-300 relative z-10 isolate">
+      <div className="flex items-start space-x-4">
+        <div className={`w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center ${colorClass}`}>
+          <Icon name="UserIcon" size={24} variant="solid" />
+        </div>
+        <div>
+          <h3 className="font-headline text-lg font-bold text-gray-900 leading-tight mb-1">
+            {review.name}
+          </h3>
+          {/* Render stars for visually premium feel */}
+          <div className="flex space-x-0.5">
+            {[...Array(5)].map((_, i) => (
+              <Icon key={i} name="StarIcon" size={14} variant="solid" className="text-yellow-400" />
+            ))}
+          </div>
         </div>
       </div>
+      <p className="mt-4 font-body text-gray-600 leading-relaxed text-[15px]">{review.text}</p>
     </div>
-    <p className="mt-4 font-body text-gray-600 leading-relaxed text-[15px]">{review.text}</p>
-  </div>
-);
+  );
+};
 
 ReviewCard.propTypes = {
   review: PropTypes.object.isRequired,

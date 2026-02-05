@@ -26,6 +26,13 @@ function AppImage({
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
+  // Sync state with src prop changes
+  React.useEffect(() => {
+    setImageSrc(src || fallbackSrc);
+    setIsLoading(true);
+    setHasError(false);
+  }, [src, fallbackSrc]);
+
   // More reliable external URL detection
   const isExternal = imageSrc?.startsWith('http://') || imageSrc?.startsWith('https://');
   const isLocal =
@@ -115,6 +122,7 @@ function AppImage({
       <div className={`relative ${className}`}>
         <Image
           {...imageProps}
+          className={`${isLoading ? 'bg-gray-200' : ''} ${onClick ? 'cursor-pointer hover:opacity-90 transition-opacity' : ''}`}
           fill
           alt={alt}
           sizes={sizes || '100vw'}

@@ -10,15 +10,28 @@ export default function TestimonialCard({
   date,
   location,
 }) {
+  const colors = [
+    'bg-emerald-100 text-emerald-600',
+    'bg-sky-100 text-sky-600',
+    'bg-orange-100 text-orange-600',
+    'bg-violet-100 text-violet-600',
+    'bg-rose-100 text-rose-600',
+    'bg-amber-100 text-amber-600',
+    'bg-teal-100 text-teal-600',
+    'bg-indigo-100 text-indigo-600',
+    'bg-fuchsia-100 text-fuchsia-600',
+    'bg-cyan-100 text-cyan-600',
+  ];
+
+  // Simple hash to consistently pick a color for a name
+  const nameHash = patient?.name?.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) || 0;
+  const colorClass = colors[nameHash % colors.length];
+
   return (
-    <div className="w-full min-w-0 bg-card rounded-xl p-4 md:p-6 shadow-elevation-sm hover:shadow-elevation-md transition-all duration-normal">
+    <div className="w-full min-w-0 bg-white rounded-xl p-4 md:p-6 shadow-elevation-sm hover:shadow-elevation-md transition-all duration-normal">
       <div className="flex items-start gap-4 mb-4">
-        <div className="w-12 h-12 md:w-16 md:h-16 flex-shrink-0 rounded-full overflow-hidden bg-muted">
-          <AppImage
-            src={patient?.image}
-            alt={patient?.alt}
-            className="w-full h-full object-cover"
-          />
+        <div className={`w-12 h-12 md:w-16 md:h-16 flex-shrink-0 rounded-full flex items-center justify-center ${colorClass}`}>
+          <Icon name="UserIcon" size={32} variant="solid" />
         </div>
 
         <div className="flex-1 min-w-0">
