@@ -32,7 +32,7 @@ export default function ContactDetailsSection({ scheduleData, contactData }) {
               {/* Ideally this would be a real image from the project assets */}
               <div className="w-full flex-1 bg-gray-50 rounded-lg mb-4 overflow-hidden relative border border-gray-100">
                 <Image
-                  src="/assets/images/clinic_building.png"
+                  src="/assets/images/clinic/clinic_building.png"
                   alt="Singh Dental Clinic Building"
                   fill
                   className="object-contain"
@@ -85,9 +85,8 @@ export default function ContactDetailsSection({ scheduleData, contactData }) {
                     </div>
 
                     <span
-                      className={`font-body text-sm md:text-base font-semibold ${
-                        item?.closed ? 'text-red-500' : 'text-text-primary'
-                      }`}
+                      className={`font-body text-sm md:text-base font-semibold ${item?.closed ? 'text-red-500' : 'text-text-primary'
+                        }`}
                     >
                       {item?.closed ? 'CLOSED' : item?.hours}
                     </span>

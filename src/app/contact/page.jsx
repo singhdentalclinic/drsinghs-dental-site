@@ -18,7 +18,7 @@ export default function ContactPage() {
   const heroData = {
     title: 'Get in Touch',
     description:
-      'Need a dental consultation, emergency care, or appointment booking?\nCall, WhatsApp, or visit our clinic Ã¢‚¬€ weÃ¢‚¬„¢re here to help.',
+      'Need a dental consultation, emergency care, or appointment booking?\nCall, WhatsApp, or visit our clinic we are here to help.',
     emergencyPhone: '+91 84498 30107',
   };
 
