@@ -55,12 +55,9 @@ export default function ServicesInteractive({ services, treatmentSteps, emergenc
     }
   };
 
-  const filteredServices =
-    selectedCategories.includes('all')
-      ? services
-      : services?.filter((service) =>
-        selectedCategories.includes(service?.category?.toLowerCase())
-      );
+  const filteredServices = selectedCategories.includes('all')
+    ? services
+    : services?.filter((service) => selectedCategories.includes(service?.category?.toLowerCase()));
 
   const tabs = [
     { id: 'services', name: 'Our Services', icon: 'RectangleStackIcon' },
@@ -85,10 +82,11 @@ export default function ServicesInteractive({ services, treatmentSteps, emergenc
             <Fragment key={tab?.id}>
               <button
                 onClick={() => handleTabChange(tab?.id)}
-                className={`flex-shrink-0 md:flex-1 flex items-center justify-center space-x-2 px-4 md:px-6 py-3 rounded-lg text-sm md:text-base font-medium transition-all duration-fast ${activeTab === tab?.id
-                  ? 'bg-primary text-white shadow-elevation-md'
-                  : 'bg-card text-text-primary hover:bg-muted'
-                  }`}
+                className={`flex-shrink-0 md:flex-1 flex items-center justify-center space-x-2 px-4 md:px-6 py-3 rounded-lg text-sm md:text-base font-medium transition-all duration-fast ${
+                  activeTab === tab?.id
+                    ? 'bg-primary text-white shadow-elevation-md'
+                    : 'bg-card text-text-primary hover:bg-muted'
+                }`}
               >
                 <Icon
                   name={tab?.icon}
@@ -99,10 +97,11 @@ export default function ServicesInteractive({ services, treatmentSteps, emergenc
               </button>
               {index < tabs.length - 1 && (
                 <div
-                  className={`flex-shrink-0 w-px h-6 bg-black/50 mx-1 transition-opacity duration-300 ${activeTab === tab.id || activeTab === tabs[index + 1].id
-                    ? 'opacity-0'
-                    : 'opacity-100'
-                    }`}
+                  className={`flex-shrink-0 w-px h-6 bg-black/50 mx-1 transition-opacity duration-300 ${
+                    activeTab === tab.id || activeTab === tabs[index + 1].id
+                      ? 'opacity-0'
+                      : 'opacity-100'
+                  }`}
                 />
               )}
             </Fragment>
@@ -132,10 +131,12 @@ export default function ServicesInteractive({ services, treatmentSteps, emergenc
 
                 <button
                   onClick={() => setIsFilterOpen(!isFilterOpen)}
-                  className={`flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg border transition-all relative ${isFilterOpen || (selectedCategories.length > 0 && !selectedCategories.includes('all'))
-                    ? 'bg-secondary text-white border-secondary shadow-sm'
-                    : 'bg-white text-text-primary border-border hover:bg-muted'
-                    }`}
+                  className={`flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg border transition-all relative ${
+                    isFilterOpen ||
+                    (selectedCategories.length > 0 && !selectedCategories.includes('all'))
+                      ? 'bg-secondary text-white border-secondary shadow-sm'
+                      : 'bg-white text-text-primary border-border hover:bg-muted'
+                  }`}
                   aria-label="Filter"
                 >
                   <Icon name="FunnelIcon" size={20} variant={isFilterOpen ? 'solid' : 'outline'} />
@@ -157,7 +158,9 @@ export default function ServicesInteractive({ services, treatmentSteps, emergenc
                 />
                 <div className="absolute top-full right-0 mt-2 w-64 bg-white rounded-xl shadow-elevation-lg border border-border z-50 py-3 overflow-hidden animate-in fade-in slide-in-from-top-1 duration-200">
                   <div className="px-4 py-2 border-b border-border/50 mb-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-text-secondary">Categories</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-text-secondary">
+                      Categories
+                    </span>
                   </div>
                   <div className="max-h-80 overflow-y-auto">
                     {categories.map((category) => (
@@ -170,18 +173,32 @@ export default function ServicesInteractive({ services, treatmentSteps, emergenc
                           <Icon
                             name={category.icon}
                             size={18}
-                            className={selectedCategories.includes(category.id) ? 'text-secondary' : 'text-text-secondary'}
+                            className={
+                              selectedCategories.includes(category.id)
+                                ? 'text-secondary'
+                                : 'text-text-secondary'
+                            }
                           />
-                          <span className={`${selectedCategories.includes(category.id) ? 'font-semibold text-secondary' : 'text-text-primary'}`}>
+                          <span
+                            className={`${selectedCategories.includes(category.id) ? 'font-semibold text-secondary' : 'text-text-primary'}`}
+                          >
                             {category.name}
                           </span>
                         </div>
-                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${selectedCategories.includes(category.id)
-                          ? 'bg-secondary border-secondary'
-                          : 'bg-white border-border'
-                          }`}>
+                        <div
+                          className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${
+                            selectedCategories.includes(category.id)
+                              ? 'bg-secondary border-secondary'
+                              : 'bg-white border-border'
+                          }`}
+                        >
                           {selectedCategories.includes(category.id) && (
-                            <Icon name="CheckIcon" size={14} className="text-white" variant="solid" />
+                            <Icon
+                              name="CheckIcon"
+                              size={14}
+                              className="text-white"
+                              variant="solid"
+                            />
                           )}
                         </div>
                       </button>

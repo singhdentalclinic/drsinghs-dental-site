@@ -288,10 +288,11 @@ export default function HeroSection({ stats }) {
                 resetAutoSlide();
                 setCurrentSlideIndex(idx);
               }}
-              className={`relative h-1.5 md:h-2 rounded-full overflow-hidden cursor-pointer transition-all duration-500 ease-in-out shadow-sm ${idx === currentSlideIndex
-                ? 'w-8 md:w-12 bg-white/70'
-                : 'w-1.5 md:w-2 bg-white/30 hover:bg-white'
-                }`}
+              className={`relative h-1.5 md:h-2 rounded-full overflow-hidden cursor-pointer transition-all duration-500 ease-in-out shadow-sm ${
+                idx === currentSlideIndex
+                  ? 'w-8 md:w-12 bg-white/70'
+                  : 'w-1.5 md:w-2 bg-white/30 hover:bg-white'
+              }`}
               aria-label={`Go to slide ${idx + 1}`}
             >
               {idx === currentSlideIndex && (
@@ -443,11 +444,7 @@ export default function HeroSection({ stats }) {
                 sub: 'Patients',
               },
             ].map((item, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="flex items-center gap-2 group"
-              >
+              <motion.div key={index} variants={fadeInUp} className="flex items-center gap-2 group">
                 <div className="w-10 h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
                   {item.logo ? (
                     <div className="relative w-full h-full">

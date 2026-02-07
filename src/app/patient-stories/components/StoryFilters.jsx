@@ -56,12 +56,10 @@ export default function StoryFilters({ categories, onFilterChange }) {
                 {activeCategoryCount} Selected
               </span>
             </div>
-            <div className={`p-2 rounded-full transition-all duration-300 ${isOpen ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}>
-              <Icon
-                name="FunnelIcon"
-                size={20}
-                variant={isOpen ? 'solid' : 'outline'}
-              />
+            <div
+              className={`p-2 rounded-full transition-all duration-300 ${isOpen ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}
+            >
+              <Icon name="FunnelIcon" size={20} variant={isOpen ? 'solid' : 'outline'} />
             </div>
           </div>
         </button>
@@ -75,14 +73,18 @@ export default function StoryFilters({ categories, onFilterChange }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 <button
                   onClick={() => toggleFilter('all')}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 border-2 ${selectedFilters.includes('all')
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 border-2 ${
+                    selectedFilters.includes('all')
                       ? 'bg-primary/5 border-primary text-primary'
                       : 'bg-gray-50 border-transparent hover:border-gray-200 text-text-secondary'
-                    }`}
+                  }`}
                 >
                   <div
-                    className={`w-6 h-6 rounded flex items-center justify-center transition-all ${selectedFilters.includes('all') ? 'bg-primary' : 'bg-white border-2 border-gray-300'
-                      }`}
+                    className={`w-6 h-6 rounded flex items-center justify-center transition-all ${
+                      selectedFilters.includes('all')
+                        ? 'bg-primary'
+                        : 'bg-white border-2 border-gray-300'
+                    }`}
                   >
                     {selectedFilters.includes('all') && (
                       <Icon name="CheckIcon" size={16} className="text-white" variant="solid" />
@@ -95,16 +97,18 @@ export default function StoryFilters({ categories, onFilterChange }) {
                   <button
                     key={category?.id}
                     onClick={() => toggleFilter(category?.id)}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 border-2 ${selectedFilters.includes(category?.id)
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 border-2 ${
+                      selectedFilters.includes(category?.id)
                         ? 'bg-primary/5 border-primary text-primary'
                         : 'bg-gray-50 border-transparent hover:border-gray-200 text-text-secondary'
-                      }`}
+                    }`}
                   >
                     <div
-                      className={`w-6 h-6 rounded flex items-center justify-center transition-all ${selectedFilters.includes(category?.id)
+                      className={`w-6 h-6 rounded flex items-center justify-center transition-all ${
+                        selectedFilters.includes(category?.id)
                           ? 'bg-primary'
                           : 'bg-white border-2 border-gray-300'
-                        }`}
+                      }`}
                     >
                       {selectedFilters.includes(category?.id) && (
                         <Icon name="CheckIcon" size={16} className="text-white" variant="solid" />
@@ -117,7 +121,8 @@ export default function StoryFilters({ categories, onFilterChange }) {
 
               <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
                 <p className="text-xs text-text-secondary italic">
-                  Showing results for {selectedFilters.length} {selectedFilters.length === 1 ? 'category' : 'categories'}
+                  Showing results for {selectedFilters.length}{' '}
+                  {selectedFilters.length === 1 ? 'category' : 'categories'}
                 </p>
                 <button
                   onClick={() => setIsOpen(false)}

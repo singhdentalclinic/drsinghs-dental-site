@@ -8,15 +8,16 @@ export default function VideoTestimonial({
   thumbnail,
   patientName,
   treatment,
-  videoUrl,
+  _videoUrl,
   location,
-  onPlay,
+  _onPlay,
   isActive = false,
 }) {
   return (
     <div
-      className={`flex flex-col group w-[280px] md:w-[290px] mx-auto transition-all duration-500 ease-in-out ${isActive ? 'scale-100' : 'scale-[0.85]'
-        }`}
+      className={`flex flex-col group w-[280px] md:w-[290px] mx-auto transition-all duration-500 ease-in-out ${
+        isActive ? 'scale-100' : 'scale-[0.85]'
+      }`}
     >
       {/* Video Content Card */}
       <div

@@ -139,9 +139,6 @@ export default function InstagramConnect() {
     },
   ];
 
-
-
-
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
     checkMobile();
@@ -182,15 +179,17 @@ export default function InstagramConnect() {
     <section
       style={{
         ...styles.hero,
-        ...(isMobile ? { overflowY: 'hidden', touchAction: 'pan-x' } : {})
+        ...(isMobile ? { overflowY: 'hidden', touchAction: 'pan-x' } : {}),
       }}
       ref={containerRef}
       tabIndex={0}
     >
-      <div style={{
-        ...styles.scrapbookCanvas,
-        ...(isMobile ? { height: '100dvh' } : {})
-      }}>
+      <div
+        style={{
+          ...styles.scrapbookCanvas,
+          ...(isMobile ? { height: '100dvh' } : {}),
+        }}
+      >
         <div style={styles.glowCenter} aria-hidden="true" />
 
         {media.map((item, i) => (
@@ -260,8 +259,8 @@ export default function InstagramConnect() {
 
             <div>
               <p style={styles.desc}>
-                For more regular updates about clinic, patient stories and dental care tips, follow us
-                on our social media platforms below.
+                For more regular updates about clinic, patient stories and dental care tips, follow
+                us on our social media platforms below.
               </p>
 
               <SocialButtons />
@@ -343,7 +342,6 @@ const styles = {
     marginBottom: -15,
   },
 
-
   title: {
     fontSize: 'clamp(36px, 9vw, 64px)',
     color: '#fff',
@@ -351,14 +349,12 @@ const styles = {
     fontWeight: 'bold',
   },
 
-
   desc: {
     color: '#eaeaea',
     fontSize: 'clamp(12px, 1.8vw, 16px)',
     margin: '12px 0 clamp(16px, 3vh, 32px)',
     lineHeight: 1.6,
   },
-
 
   hint: {
     marginTop: 'clamp(24px, 5vh, 48px)',

@@ -64,8 +64,14 @@ export default function DoctorExpertise({ doctor }) {
                 </div>
                 {/* Mobile Experience Badge */}
                 <div className="absolute -bottom-1 -right-1 bg-white rounded-lg shadow-elevation-sm border border-slate-100 px-2 py-0.5 flex items-center gap-1.5 z-10">
-                  <span className="text-primary font-bold text-lg leading-none">{doctor?.experience}+</span>
-                  <span className="text-[8px] text-text-secondary leading-[1.1] font-bold uppercase tracking-tighter">Yrs<br />Exp</span>
+                  <span className="text-primary font-bold text-lg leading-none">
+                    {doctor?.experience}+
+                  </span>
+                  <span className="text-[8px] text-text-secondary leading-[1.1] font-bold uppercase tracking-tighter">
+                    Yrs
+                    <br />
+                    Exp
+                  </span>
                 </div>
               </div>
               <div className="flex-1 space-y-1.5">
@@ -99,14 +105,24 @@ export default function DoctorExpertise({ doctor }) {
                 whileInView="animate"
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
                 }}
                 viewport={{ once: true, amount: 0.4 }}
               >
                 <div className="flex items-center space-x-2 md:space-x-3">
                   <div className="w-8 h-8 md:w-16 md:h-16 bg-accent/10 rounded-full flex items-center justify-center">
-                    <Icon name="AcademicCapIcon" size={20} variant="solid" className="text-orange-500 md:hidden" />
-                    <Icon name="AcademicCapIcon" size={32} variant="solid" className="text-orange-500 hidden md:block" />
+                    <Icon
+                      name="AcademicCapIcon"
+                      size={20}
+                      variant="solid"
+                      className="text-orange-500 md:hidden"
+                    />
+                    <Icon
+                      name="AcademicCapIcon"
+                      size={32}
+                      variant="solid"
+                      className="text-orange-500 hidden md:block"
+                    />
                   </div>
                   <div>
                     <div className="font-headline text-xl md:text-3xl font-semibold text-primary whitespace-nowrap">
@@ -146,7 +162,9 @@ export default function DoctorExpertise({ doctor }) {
                   onClick={() => setIsExpanded(!isExpanded)}
                   className="cursor-pointer space-y-2 group"
                 >
-                  <p className={`font-body text-base md:text-lg text-text-secondary leading-relaxed transition-all duration-300 ${!isExpanded ? 'line-clamp-3 md:line-clamp-none' : ''}`}>
+                  <p
+                    className={`font-body text-base md:text-lg text-text-secondary leading-relaxed transition-all duration-300 ${!isExpanded ? 'line-clamp-3 md:line-clamp-none' : ''}`}
+                  >
                     {doctor?.bio}
                   </p>
                   <button className="text-blue-500 text-sm font-semibold md:hidden flex items-center gap-1 group-hover:underline">
@@ -186,10 +204,7 @@ export default function DoctorExpertise({ doctor }) {
                 <h3 className="font-headline text-xl md:text-2xl font-semibold text-text-primary">
                   Certifications & Memberships
                 </h3>
-                <motion.div
-                  className="flex flex-wrap gap-2"
-                  variants={staggerContainer(0.05)}
-                >
+                <motion.div className="flex flex-wrap gap-2" variants={staggerContainer(0.05)}>
                   {doctor?.certifications?.map((cert, index) => (
                     <motion.div
                       key={index}
@@ -203,10 +218,7 @@ export default function DoctorExpertise({ doctor }) {
               </motion.div>
             </div>
 
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
-            >
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4">
               <NextPageButton href="/about">Read Full Story</NextPageButton>
               <Link
                 href="/book-appointment"

@@ -56,10 +56,7 @@ export default function AppointmentCTA({ ctaData }) {
                 ))}
               </motion.div>
 
-              <motion.div
-                variants={fadeInUp}
-                className="flex flex-col sm:flex-row gap-4 pt-4"
-              >
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link
                   href="tel:+918449830107"
                   className="inline-flex items-center justify-center space-x-2 px-6 md:px-8 py-3 md:py-4 bg-white hover:bg-white/90 text-primary font-cta text-base md:text-lg font-semibold rounded-lg shadow-elevation-md transition-all duration-fast"

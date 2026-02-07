@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect, useMemo } from 'react';
+import { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '@/components/ui/AppIcon';
 import Link from 'next/link';
@@ -10,7 +10,6 @@ import BeforeAfterSlider from './BeforeAfterSlider';
 import VideoTestimonial from './VideoTestimonial';
 import TestimonialCard from './TestimonialCard';
 import CaseStudyCard from './CaseStudyCard';
-import { motion, AnimatePresence } from 'framer-motion';
 
 export default function PatientStoriesInteractive({
   categories,
@@ -29,18 +28,32 @@ export default function PatientStoriesInteractive({
     setActiveVideoIndex(0); // Reset index on filter change
   };
 
-  const filterContent = (items) => {
-    if (!selectedFilters || selectedFilters.includes('all') || selectedFilters.length === 0) {
-      return items;
-    }
-    return items?.filter((item) => selectedFilters.includes(item?.categoryId));
-  };
+  const filterContent = useCallback(
+    (items) => {
+      if (!selectedFilters || selectedFilters.includes('all') || selectedFilters.length === 0) {
+        return items;
+      }
+      return items?.filter((item) => selectedFilters.includes(item?.categoryId));
+    },
+    [selectedFilters]
+  );
 
-  const filteredBeforeAfter = useMemo(() => filterContent(beforeAfterGallery), [beforeAfterGallery, selectedFilters]);
-  const filteredVideos = useMemo(() => filterContent(videoTestimonials), [videoTestimonials, selectedFilters]);
-  const filteredTestimonials = useMemo(() => filterContent(testimonials), [testimonials, selectedFilters]);
-  const filteredCaseStudies = useMemo(() => filterContent(caseStudies), [caseStudies, selectedFilters]);
-
+  const filteredBeforeAfter = useMemo(
+    () => filterContent(beforeAfterGallery),
+    [beforeAfterGallery, filterContent]
+  );
+  const filteredVideos = useMemo(
+    () => filterContent(videoTestimonials),
+    [videoTestimonials, filterContent]
+  );
+  const filteredTestimonials = useMemo(
+    () => filterContent(testimonials),
+    [testimonials, filterContent]
+  );
+  const filteredCaseStudies = useMemo(
+    () => filterContent(caseStudies),
+    [caseStudies, filterContent]
+  );
 
   // Handle native drag for desktop
   const setupDrag = (slider) => {
@@ -63,7 +76,7 @@ export default function PatientStoriesInteractive({
       slider.classList.remove('active');
     };
 
-    const handleMouseUp = (e) => {
+    const handleMouseUp = (_e) => {
       isDown = false;
       slider.classList.remove('active');
       if (slider.dataset.moved === 'true') {
@@ -269,7 +282,6 @@ export default function PatientStoriesInteractive({
             {/* Desktop Fade Overlays */}
             <div className="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background via-background/20 to-transparent pointer-events-none z-10" />
             <div className="hidden lg:block absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background via-background/20 to-transparent pointer-events-none z-10" />
-
           </div>
 
           {/* Pagination Controls */}
@@ -277,8 +289,11 @@ export default function PatientStoriesInteractive({
             <button
               onClick={() => scrollToItem(activeVideoIndex - 1)}
               disabled={activeVideoIndex === 0}
-              className={`p-2 rounded-full bg-white shadow-md border border-gray-100 transition-all duration-200 ${activeVideoIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:scale-110 active:scale-95'
-                }`}
+              className={`p-2 rounded-full bg-white shadow-md border border-gray-100 transition-all duration-200 ${
+                activeVideoIndex === 0
+                  ? 'opacity-30 cursor-not-allowed'
+                  : 'hover:scale-110 active:scale-95'
+              }`}
             >
               <Icon name="ChevronLeftIcon" size={20} className="text-gray-700" />
             </button>
@@ -288,8 +303,11 @@ export default function PatientStoriesInteractive({
                 <button
                   key={index}
                   onClick={() => scrollToItem(index)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activeVideoIndex === index ? 'bg-gray-900 w-3 h-3' : 'bg-gray-300 hover:bg-gray-400'
-                    }`}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    activeVideoIndex === index
+                      ? 'bg-gray-900 w-3 h-3'
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
                 />
               ))}
             </div>
@@ -297,8 +315,11 @@ export default function PatientStoriesInteractive({
             <button
               onClick={() => scrollToItem(activeVideoIndex + 1)}
               disabled={activeVideoIndex === filteredVideos.length - 1}
-              className={`p-2 rounded-full bg-white shadow-md border border-gray-100 transition-all duration-200 ${activeVideoIndex === filteredVideos.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:scale-110 active:scale-95'
-                }`}
+              className={`p-2 rounded-full bg-white shadow-md border border-gray-100 transition-all duration-200 ${
+                activeVideoIndex === filteredVideos.length - 1
+                  ? 'opacity-30 cursor-not-allowed'
+                  : 'hover:scale-110 active:scale-95'
+              }`}
             >
               <Icon name="ChevronRightIcon" size={20} className="text-gray-700" />
             </button>
@@ -327,7 +348,8 @@ export default function PatientStoriesInteractive({
               Patient Testimonials
             </h2>
             <p className="font-body text-sm md:text-base text-text-secondary mt-2 max-w-2xl px-4">
-              Real stories from our patients about their journey to better dental health and confident smiles.
+              Real stories from our patients about their journey to better dental health and
+              confident smiles.
             </p>
           </div>
 
@@ -351,7 +373,11 @@ export default function PatientStoriesInteractive({
               className="inline-flex items-center gap-2 px-8 py-3 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold rounded-lg transition-all duration-300 group shadow-elevation-sm hover:shadow-elevation-md"
             >
               View More Verified Reviews
-              <Icon name="ArrowRightIcon" size={18} className="transition-transform group-hover:translate-x-1" />
+              <Icon
+                name="ArrowRightIcon"
+                size={18}
+                className="transition-transform group-hover:translate-x-1"
+              />
             </Link>
           </div>
         </section>
@@ -369,7 +395,8 @@ export default function PatientStoriesInteractive({
               Detailed Case Studies
             </h2>
             <p className="font-body text-sm md:text-base text-text-secondary mt-2 max-w-2xl px-4">
-              In-depth looks at complex treatments, showcasing our clinical expertise and transformative results.
+              In-depth looks at complex treatments, showcasing our clinical expertise and
+              transformative results.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">

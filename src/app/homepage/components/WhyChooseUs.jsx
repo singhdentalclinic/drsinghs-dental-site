@@ -43,7 +43,7 @@ export default function WhyChooseUs({ features }) {
           variants={staggerContainer(0.1)}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3, margin: "-50px" }}
+          viewport={{ once: true, amount: 0.3, margin: '-50px' }}
         >
           {features?.map((feature) => (
             <motion.div
@@ -51,8 +51,9 @@ export default function WhyChooseUs({ features }) {
               variants={fadeInUp}
               whileHover={{
                 y: -8,
-                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
-                borderColor: "rgba(59, 130, 246, 0.1)"
+                boxShadow:
+                  '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+                borderColor: 'rgba(59, 130, 246, 0.1)',
               }}
               className="flex-none w-[85vw] snap-center sm:w-auto bg-white rounded-xl p-6 md:p-8 border border-transparent shadow-elevation-sm"
               style={{ willChange: 'transform, opacity, filter' }}

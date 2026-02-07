@@ -19,9 +19,7 @@ export default function ServiceCard({ service }) {
           />
         </div>
         <div className="p-3 text-center flex-1 flex items-center justify-center">
-          <h3 className="text-sm font-semibold text-text-primary line-clamp-2">
-            {service?.title}
-          </h3>
+          <h3 className="text-sm font-semibold text-text-primary line-clamp-2">{service?.title}</h3>
         </div>
       </Link>
 
@@ -41,7 +39,9 @@ export default function ServiceCard({ service }) {
                 <div className="p-2 bg-primary/10 rounded-md">
                   <Icon name={service?.icon} size={20} variant="solid" className="text-primary" />
                 </div>
-                <span className="text-xs md:text-sm font-medium text-accent">{service?.category}</span>
+                <span className="text-xs md:text-sm font-medium text-accent">
+                  {service?.category}
+                </span>
               </div>
               {service?.isEmergency && (
                 <span className="px-2 py-1 bg-error/10 text-error text-xs font-semibold rounded">

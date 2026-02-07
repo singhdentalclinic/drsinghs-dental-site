@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { StarIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
-import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 import { staggerContainer, fadeInUp } from '@/utils/AnimationVariants';
 
@@ -39,7 +38,9 @@ const ReviewCard = ({ review }) => {
   return (
     <div className="bg-white rounded-3xl p-8 mb-6 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] border border-gray-100 hover:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.12)] transition-shadow duration-300 relative z-10 isolate">
       <div className="flex items-start space-x-4">
-        <div className={`w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center ${colorClass}`}>
+        <div
+          className={`w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center ${colorClass}`}
+        >
           <Icon name="UserIcon" size={24} variant="solid" />
         </div>
         <div>

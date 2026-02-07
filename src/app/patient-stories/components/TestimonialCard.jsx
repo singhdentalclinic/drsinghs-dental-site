@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
 export default function TestimonialCard({
@@ -30,7 +29,9 @@ export default function TestimonialCard({
   return (
     <div className="w-full min-w-0 bg-white rounded-xl p-4 md:p-6 shadow-elevation-sm hover:shadow-elevation-md transition-all duration-normal">
       <div className="flex items-start gap-4 mb-4">
-        <div className={`w-12 h-12 md:w-16 md:h-16 flex-shrink-0 rounded-full flex items-center justify-center ${colorClass}`}>
+        <div
+          className={`w-12 h-12 md:w-16 md:h-16 flex-shrink-0 rounded-full flex items-center justify-center ${colorClass}`}
+        >
           <Icon name="UserIcon" size={32} variant="solid" />
         </div>
 

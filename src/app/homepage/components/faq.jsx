@@ -17,23 +17,21 @@ const DesktopLayout = ({ faqData, activeIndex, setActiveIndex }) => (
     {/* Left Column: Questions List */}
     <div className="col-span-12 lg:col-span-5 space-y-2">
       {faqData?.questions?.map((item, index) => (
-        <motion.div
-          key={index}
-          className="group/item"
-          variants={fadeInUp}
-        >
+        <motion.div key={index} className="group/item" variants={fadeInUp}>
           <button
             onClick={() => setActiveIndex(index)}
-            className={`w-full text-left py-4 px-5 rounded-lg transition-all duration-300 flex items-center justify-between group ${activeIndex === index
-              ? 'bg-white shadow-elevation-sm border-l-4 border-primary'
-              : 'hover:bg-white/50 border-l-4 border-transparent'
-              }`}
+            className={`w-full text-left py-4 px-5 rounded-lg transition-all duration-300 flex items-center justify-between group ${
+              activeIndex === index
+                ? 'bg-white shadow-elevation-sm border-l-4 border-primary'
+                : 'hover:bg-white/50 border-l-4 border-transparent'
+            }`}
           >
             <span
-              className={`font-body font-medium text-base transition-colors ${activeIndex === index
-                ? 'text-primary'
-                : 'text-text-primary group-hover:text-primary'
-                }`}
+              className={`font-body font-medium text-base transition-colors ${
+                activeIndex === index
+                  ? 'text-primary'
+                  : 'text-text-primary group-hover:text-primary'
+              }`}
             >
               {item.question}
             </span>
@@ -99,26 +97,24 @@ const MobileLayout = ({ faqData }) => {
       viewport={{ once: true, amount: 0.1 }}
     >
       {faqData?.questions?.map((item, index) => (
-        <motion.div
-          key={index}
-          className="relative"
-          variants={fadeInUp}
-        >
+        <motion.div key={index} className="relative" variants={fadeInUp}>
           <button
             onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
             className="w-full flex items-center justify-between py-4 text-left transition-all duration-200 group"
           >
             <span
-              className={`font-body font-medium text-sm md:text-base pr-4 group-hover:text-primary transition-colors ${openIndex === index ? 'text-primary' : 'text-text-primary'
-                }`}
+              className={`font-body font-medium text-sm md:text-base pr-4 group-hover:text-primary transition-colors ${
+                openIndex === index ? 'text-primary' : 'text-text-primary'
+              }`}
             >
               {item.question}
             </span>
             <span
-              className={`flex-shrink-0 transition-transform duration-200 ${openIndex === index
-                ? 'rotate-180 text-primary'
-                : 'text-text-secondary group-hover:text-primary'
-                }`}
+              className={`flex-shrink-0 transition-transform duration-200 ${
+                openIndex === index
+                  ? 'rotate-180 text-primary'
+                  : 'text-text-secondary group-hover:text-primary'
+              }`}
             >
               <Icon name="ChevronDownIcon" size={20} variant="outline" />
             </span>
@@ -173,10 +169,7 @@ export default function FAQ({ faqData }) {
           >
             {faqData?.title || 'Frequently Asked Questions'}
           </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="font-body text-base text-text-secondary"
-          >
+          <motion.p variants={fadeInUp} className="font-body text-base text-text-secondary">
             {faqData?.description ||
               'Find answers to common questions about our dental services and appointments.'}
           </motion.p>

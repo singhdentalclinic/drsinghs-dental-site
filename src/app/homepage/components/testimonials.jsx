@@ -100,7 +100,7 @@ export default function VideoTestimonials() {
           variants={staggerContainer(0.1)}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3, margin: "-50px" }}
+          viewport={{ once: true, amount: 0.3, margin: '-50px' }}
         >
           {testimonials.map((testimonial) => {
             const videoId = testimonial.videoUrl.includes('shorts/')
@@ -180,7 +180,9 @@ export default function VideoTestimonials() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h5 className="text-sm font-bold text-gray-900 truncate">Singh Dental Clinic</h5>
+                      <h5 className="text-sm font-bold text-gray-900 truncate">
+                        Singh Dental Clinic
+                      </h5>
                       <div className="flex items-center space-x-1 mt-0.5">
                         <span className="font-bold text-gray-900 leading-none text-sm">4.8</span>
                         <div className="flex">

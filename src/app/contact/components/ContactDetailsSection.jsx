@@ -85,8 +85,9 @@ export default function ContactDetailsSection({ scheduleData, contactData }) {
                     </div>
 
                     <span
-                      className={`font-body text-sm md:text-base font-semibold ${item?.closed ? 'text-red-500' : 'text-text-primary'
-                        }`}
+                      className={`font-body text-sm md:text-base font-semibold ${
+                        item?.closed ? 'text-red-500' : 'text-text-primary'
+                      }`}
                     >
                       {item?.closed ? 'CLOSED' : item?.hours}
                     </span>
