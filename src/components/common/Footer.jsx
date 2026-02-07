@@ -14,15 +14,17 @@ export default function Footer() {
       { label: 'Emergency Services', path: '/services' },
     ],
     quickLinks: [
-      { label: 'About Us', path: '/about' },
-      { label: 'Patient Stories', path: '/patient-stories' },
       { label: 'Book Appointment', path: '/book-appointment' },
-      { label: 'Contact Us', path: '/contact' },
+      { label: 'Treatments', path: '/treatments' },
+      { label: 'Patient Stories', path: '/patient-stories' },
+      { label: 'Team', path: '/our-team' },
+      { label: 'Contact', path: '/contact' },
+      { label: 'About Us', path: '/about' },
     ],
     contact: {
       address: 'Singh Dental Clinic, Main Market, Ramnagar, Uttarakhand 244715',
       phone: '+91 84498 30107',
-      email: 'info@singhdentalclinic.com',
+      email: 'singhdentalclinicramnagar@gmail.com',
     },
   };
 

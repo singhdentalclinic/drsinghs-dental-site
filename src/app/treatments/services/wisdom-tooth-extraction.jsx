@@ -35,10 +35,10 @@ const WisdomToothExtraction = () => {
     {
       title: 'Why Removal is Often Necessary',
       content: `An impacted or poorly positioned wisdom tooth can cause:
-Ã¢‚¬¢ Infection(pericoronitis) in the surrounding gum tissue
-Ã¢‚¬¢ Decay of the wisdom tooth or the adjacent molar
-Ã¢‚¬¢ Formation of cysts or tumors in the jawbone
-Ã¢‚¬¢ Severe pain and inflammation`,
+• Infection (pericoronitis) in the surrounding gum tissue
+• Decay of the wisdom tooth or the adjacent molar
+• Formation of cysts or tumors in the jawbone
+• Severe pain and inflammation`,
     },
     {
       title: 'A Careful, Expert Approach',
@@ -57,7 +57,7 @@ const WisdomToothExtraction = () => {
       title="Wisdom Tooth Extraction"
       category="Restorative"
       description="Say goodbye to wisdom tooth pain. Our expert team provides safe, gentle, and precise extractions for impacted or problematic third molars to protect your oral health."
-      image="https://img.rocket.new/generatedImages/rocket_gen_img_1244f7db5-1765753041878.png"
+      image="/assets/images/treatments/wisdom_tooth.jpg"
       painlessFeature="Atraumatic Surgical Techniques"
       duration="30-60 minutes"
       benefits={benefits}

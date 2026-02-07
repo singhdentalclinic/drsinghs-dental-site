@@ -1,10 +1,11 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import SocialButtons from './socialmediaicons';
 
 export default function InstagramConnect() {
   const containerRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const media = [
     // --- TOP LEFT ---
@@ -122,7 +123,7 @@ export default function InstagramConnect() {
       type: 'image',
       src: '/assets/images/patients_images/Dental_camp.jpg',
       rotate: '9deg',
-      style: { bottom: '2%', right: '65%', width: 250, height: 180 },
+      style: { bottom: '2%', right: '55%', width: 250, height: 180 },
     },
     {
       type: 'image',
@@ -139,23 +140,57 @@ export default function InstagramConnect() {
   ];
 
   useEffect(() => {
-    // Scroll to center on mount
-    if (containerRef.current) {
-      const container = containerRef.current;
-      const scrollX = (1900 - container.clientWidth) / 2;
-      const scrollY = (895 - container.clientHeight) / 2;
-      container.scrollTo({
-        left: scrollX,
-        top: scrollY,
-        behavior: 'instant',
-      });
-    }
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    const scrollToCenter = () => {
+      if (containerRef.current) {
+        const container = containerRef.current;
+        // Robust math: center relative to the actual content height/width
+        const canvas = container.firstChild;
+        const scrollX = (canvas.clientWidth - container.clientWidth) / 2;
+        const scrollY = (canvas.clientHeight - container.clientHeight) / 2;
+        container.scrollTo({
+          left: scrollX,
+          top: scrollY,
+          behavior: 'instant',
+        });
+      }
+    };
+
+    // Initial scroll
+    scrollToCenter();
+
+    // Short timeout to handle potential race conditions on mobile layout
+    const timer = setTimeout(scrollToCenter, 100);
+
+    // Re-center if the user resizes the window
+    window.addEventListener('resize', scrollToCenter);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('resize', scrollToCenter);
+    };
   }, []);
 
   return (
-    <section style={styles.hero} ref={containerRef}>
-      <div style={styles.scrapbookCanvas}>
-        <div style={styles.glowCenter} />
+    <section
+      style={{
+        ...styles.hero,
+        ...(isMobile ? { overflowY: 'hidden', touchAction: 'pan-x' } : {}),
+      }}
+      ref={containerRef}
+      tabIndex={0}
+    >
+      <div
+        style={{
+          ...styles.scrapbookCanvas,
+          ...(isMobile ? { height: '100dvh' } : {}),
+        }}
+      >
+        <div style={styles.glowCenter} aria-hidden="true" />
 
         {media.map((item, i) => (
           <div
@@ -196,43 +231,43 @@ export default function InstagramConnect() {
             )}
           </div>
         ))}
-      </div>
-
-      {/* FIXED CENTER OVERLAY */}
-      <div style={styles.overlay}>
-        <div style={styles.center}>
-          <p className="font-script" style={styles.script}>
-            Connect on
-          </p>
-          <h1 className="font-instagram font-semibold" style={styles.title}>
-            {'Social Media'.split('').map((char, index) => (
-              <span
-                key={index}
-                className="inline-block transition-all duration-200 hover:font-black cursor-default"
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </span>
-            ))}
-            <span style={{ color: '#fca232' }}>.</span>
-          </h1>
-          <div
-            style={{
-              height: '1px',
-              width: '100%',
-              background: 'linear-gradient(90deg, transparent, #fca232, transparent)',
-              margin: '0 auto clamp(16px, 3vh, 32px)',
-            }}
-          />
-          <div>
-            <p style={styles.desc}>
-              For more regular updates about clinic, patient stories and dental care tips, follow us
-              on our social media platforms below.
+        {/* FIXED CENTER OVERLAY */}
+        <div style={styles.overlay}>
+          <div style={styles.center}>
+            <p className="font-script" style={styles.script}>
+              Connect on
             </p>
+            <h1 className="font-instagram font-semibold" style={styles.title}>
+              {'Social Media'.split('').map((char, index) => (
+                <span
+                  key={index}
+                  className="inline-block transition-all duration-200 hover:font-black cursor-default"
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </span>
+              ))}
+              <span style={{ color: '#fca232' }}>.</span>
+            </h1>
+            <div
+              style={{
+                height: '1px',
+                width: '100%',
+                background: 'linear-gradient(90deg, transparent, #fca232, transparent)',
+                margin: '0 auto clamp(12px, 2vh, 24px)',
+              }}
+            />
 
-            <SocialButtons />
+            <div>
+              <p style={styles.desc}>
+                For more regular updates about clinic, patient stories and dental care tips, follow
+                us on our social media platforms below.
+              </p>
 
-            <div style={styles.hint}>
-              <span>Scroll to explore</span>
+              <SocialButtons />
+
+              <div style={styles.hint}>
+                <span>Scroll horizontally to explore more</span>
+              </div>
             </div>
           </div>
         </div>
@@ -252,6 +287,8 @@ const styles = {
     scrollbarWidth: 'thin',
     scrollbarColor: 'rgba(255,255,255,0.2) transparent',
     scrollSnapAlign: 'start',
+    WebkitOverflowScrolling: 'touch',
+    scrollBehavior: 'auto',
   },
 
   scrapbookCanvas: {
@@ -301,12 +338,12 @@ const styles = {
 
   script: {
     color: '#fff',
-    fontSize: 'clamp(40px, 6vw, 60px)',
-    marginBottom: -20,
+    fontSize: 'clamp(32px, 6vw, 60px)',
+    marginBottom: -15,
   },
 
   title: {
-    fontSize: 'clamp(44px, 8vw, 64px)',
+    fontSize: 'clamp(36px, 9vw, 64px)',
     color: '#fff',
     margin: 0,
     fontWeight: 'bold',
@@ -314,8 +351,8 @@ const styles = {
 
   desc: {
     color: '#eaeaea',
-    fontSize: 'clamp(14px, 1.8vw, 16px)',
-    margin: '16px 0 clamp(16px, 3.5vh, 32px)',
+    fontSize: 'clamp(12px, 1.8vw, 16px)',
+    margin: '12px 0 clamp(16px, 3vh, 32px)',
     lineHeight: 1.6,
   },
 

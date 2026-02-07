@@ -38,10 +38,10 @@ const LaserDentistry = () => {
     {
       title: 'Common Applications',
       content: `We use laser technology for:
-Ã¢‚¬¢ Gum Contouring: Reshaping gum lines for a more balanced smile (Gummy Smile correction).
-Ã¢‚¬¢ Periodontal Treatment: Removing diseased tissue and bacteria from gum pockets.
-Ã¢‚¬¢ Biopsies: Precise removal of tissue for examination.
-Ã¢‚¬¢ Teeth Whitening: Activating whitening agents for faster results.`,
+• Gum Contouring: Reshaping gum lines for a more balanced smile (Gummy Smile correction).
+• Periodontal Treatment: Removing diseased tissue and bacteria from gum pockets.
+• Biopsies: Precise removal of tissue for examination.
+• Teeth Whitening: Activating whitening agents for faster results.`,
     },
     {
       title: 'The Patient Experience',

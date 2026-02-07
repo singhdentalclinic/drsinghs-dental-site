@@ -44,22 +44,24 @@ export default function Header({ transparent = false }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled
-        ? 'bg-white/90 backdrop-blur-md shadow-elevation-md'
-        : isTransparentNav
-          ? 'bg-black/5 backdrop-blur-md'
-          : 'bg-white/95 backdrop-blur-sm'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+        isScrolled
+          ? 'bg-white/90 backdrop-blur-md shadow-elevation-md'
+          : isTransparentNav
+            ? 'bg-black/5 backdrop-blur-md'
+            : 'bg-white/95 backdrop-blur-sm'
+      }`}
     >
       <div className="w-full">
         <div className="flex items-center justify-between h-16 px-6 xl:px-12">
           {/* Logo */}
           <Link
             href="/"
-            className={`flex items-center space-x-3 group transition-all duration-300 rounded-2xl ${isScrolled
-              ? 'bg-transparent p-0 border-transparent shadow-none'
-              : 'bg-white p-0.5 md:p-0.5 shadow-lg border border-gray-100 hover:shadow-xl'
-              }`}
+            className={`flex items-center space-x-3 group transition-all duration-300 rounded-2xl ${
+              isScrolled
+                ? 'bg-transparent p-0 border-transparent shadow-none'
+                : 'bg-white p-0.5 md:p-0.5 shadow-lg border border-gray-100 hover:shadow-xl'
+            }`}
           >
             <div className="relative w-9 h-9 md:w-11 md:h-11 group-hover:scale-110 transition-transform duration-300">
               <Image
@@ -82,8 +84,9 @@ export default function Header({ transparent = false }) {
 
           {/* Desktop Navigation */}
           <nav
-            className={`hidden xl:flex items-center space-x-3 px-3 py-2 rounded-full transition-all duration-300 ${isTransparentNav ? 'bg-white shadow-lg shadow-black/5' : 'bg-white'
-              }`}
+            className={`hidden xl:flex items-center space-x-3 px-3 py-2 rounded-full transition-all duration-300 ${
+              isTransparentNav ? 'bg-white shadow-lg shadow-black/5' : 'bg-white'
+            }`}
           >
             {navigationItems.map((item) => (
               <div
@@ -145,8 +148,9 @@ export default function Header({ transparent = false }) {
               Call us
             </Link>
             <div
-              className={`w-[1.5px] h-8 mx-2 transition-colors duration-200 ${isTransparentNav ? 'bg-white/30' : 'bg-gray-200'
-                }`}
+              className={`w-[1.5px] h-8 mx-2 transition-colors duration-200 ${
+                isTransparentNav ? 'bg-white/30' : 'bg-gray-200'
+              }`}
             />
             <div className="ml-2">
               <Link href="/book-appointment">
@@ -173,8 +177,9 @@ export default function Header({ transparent = false }) {
 
         {/* Mobile Menu */}
         <div
-          className={`xl:hidden bg-white border-t shadow-lg overflow-hidden transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
-            }`}
+          className={`xl:hidden bg-white border-t shadow-lg overflow-hidden transition-all duration-500 ease-in-out ${
+            isMobileMenuOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
         >
           <div className="p-3 space-y-1 flex flex-col">
             {navigationItems.map((item) => (
@@ -240,7 +245,11 @@ export default function Header({ transparent = false }) {
               >
                 Call us
               </Link>
-              <Link href="/book-appointment" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link
+                href="/book-appointment"
+                className="w-full"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 <BookAppointmentButton className="w-full" />
               </Link>
             </div>
@@ -250,10 +259,11 @@ export default function Header({ transparent = false }) {
 
       {/* Gradient Bottom Line */}
       <div
-        className={`absolute bottom-0 left-0 w-full h-[1px] ${isTransparentNav
-          ? 'bg-gradient-to-r from-transparent via-white/80 to-transparent'
-          : 'bg-gradient-to-r from-transparent via-gray-200 to-transparent'
-          }`}
+        className={`absolute bottom-0 left-0 w-full h-[1px] ${
+          isTransparentNav
+            ? 'bg-gradient-to-r from-transparent via-white/80 to-transparent'
+            : 'bg-gradient-to-r from-transparent via-gray-200 to-transparent'
+        }`}
       />
     </header>
   );

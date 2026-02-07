@@ -25,7 +25,6 @@ export default function ServicesPage() {
       icon: 'HeartIcon',
       painlessFeature: 'Laser-assisted treatment with minimal discomfort',
       duration: '60-90 minutes',
-      startingPrice: 8000,
       isEmergency: false,
     },
     {
@@ -40,7 +39,6 @@ export default function ServicesPage() {
       icon: 'CubeIcon',
       painlessFeature: 'Computer-guided implant placement for precision',
       duration: '2-3 appointments over 3-6 months',
-      startingPrice: 35000,
       isEmergency: false,
     },
     {
@@ -55,7 +53,6 @@ export default function ServicesPage() {
       icon: 'SparklesIcon',
       painlessFeature: 'Sensitivity-free formula with enamel protection',
       duration: '60 minutes',
-      startingPrice: 12000,
       isEmergency: false,
     },
     {
@@ -70,7 +67,6 @@ export default function ServicesPage() {
       icon: 'RectangleStackIcon',
       painlessFeature: 'Minimal tooth preparation with digital smile design',
       duration: '2-3 visits over 2-3 weeks',
-      startingPrice: 18000,
       isEmergency: false,
     },
     {
@@ -85,7 +81,6 @@ export default function ServicesPage() {
       icon: 'ShieldCheckIcon',
       painlessFeature: 'Gentle ultrasonic cleaning technology',
       duration: '45-60 minutes',
-      startingPrice: 2500,
       isEmergency: false,
     },
     {
@@ -100,7 +95,6 @@ export default function ServicesPage() {
       icon: 'AdjustmentsHorizontalIcon',
       painlessFeature: 'Comfortable brackets with minimal adjustment visits',
       duration: '12-24 months',
-      startingPrice: 45000,
       isEmergency: false,
     },
     {
@@ -115,7 +109,6 @@ export default function ServicesPage() {
       icon: 'BeakerIcon',
       painlessFeature: 'Laser gum therapy for faster healing',
       duration: '2-4 sessions',
-      startingPrice: 6000,
       isEmergency: false,
     },
     {
@@ -125,17 +118,13 @@ export default function ServicesPage() {
       category: 'Restorative',
       description:
         'Safe removal of impacted or problematic wisdom teeth using advanced surgical techniques. Prevent crowding, pain, and infection with minimally invasive extraction procedures.',
-      image: 'https://img.rocket.new/generatedImages/rocket_gen_img_1244f7db5-1765753041878.png',
+      image: '/assets/images/treatments/wisdom_tooth.jpg',
       alt: 'Dental surgeon performing wisdom tooth extraction with surgical instruments in sterile environment',
       icon: 'ScissorsIcon',
       painlessFeature: 'Sedation dentistry available for anxiety-free experience',
       duration: '30-60 minutes per tooth',
-      startingPrice: 5000,
       isEmergency: false,
     },
-  ];
-
-  const newServices = [
     {
       id: 9,
       title: 'Kids Dentistry',
@@ -148,7 +137,6 @@ export default function ServicesPage() {
       icon: 'FaceSmileIcon',
       painlessFeature: 'Behavior management & gentle techniques',
       duration: '30-45 minutes',
-      startingPrice: 500,
       isEmergency: false,
     },
     {
@@ -158,12 +146,11 @@ export default function ServicesPage() {
       category: 'Restorative',
       description:
         'Custom-crafted removable replacements for missing teeth. Restore your smile, chewing ability, and confidence with our comfortable and natural-looking dentures.',
-      image: 'https://img.rocket.new/generatedImages/rocket_gen_img_15074b91a-1766134008313.png',
+      image: '/assets/images/treatments/dentures.png',
       alt: 'Full set of custom dentures displayed on a clean surface showing natural gum color and tooth shape',
       icon: 'PuzzlePieceIcon',
       painlessFeature: 'Custom-molded for irritation-free fit',
       duration: '3-4 visits over 2-4 weeks',
-      startingPrice: 15000,
       isEmergency: false,
     },
     {
@@ -173,12 +160,11 @@ export default function ServicesPage() {
       category: 'Restorative',
       description:
         'Restore the strength, shape, and appearance of damaged teeth with our high-quality custom crowns. Durable solutions that look and feel just like your natural teeth.',
-      image: 'https://img.rocket.new/generatedImages/rocket_gen_img_16e6d11e1-1766667595503.png',
+      image: '/assets/images/treatments/dental_crown.jpeg',
       alt: 'Dental professional holding a custom-made ceramic crown next to a color matching guide',
       icon: 'ShieldCheckIcon',
       painlessFeature: 'Minimal preparation with local anesthesia',
       duration: '2 visits over 1 week',
-      startingPrice: 5000,
       isEmergency: false,
     },
     {
@@ -193,7 +179,6 @@ export default function ServicesPage() {
       icon: 'AdjustmentsHorizontalIcon',
       painlessFeature: 'Modern low-friction brackets',
       duration: '12-24 months',
-      startingPrice: 25000,
       isEmergency: false,
     },
     {
@@ -208,7 +193,6 @@ export default function ServicesPage() {
       icon: 'EyeSlashIcon',
       painlessFeature: 'Smooth, comfortable plastic fit',
       duration: '6-18 months',
-      startingPrice: 50000,
       isEmergency: false,
     },
     {
@@ -223,7 +207,6 @@ export default function ServicesPage() {
       icon: 'BoltIcon',
       painlessFeature: 'No-drill, often needle-free treatment',
       duration: 'Varies by procedure',
-      startingPrice: 2000,
       isEmergency: false,
     },
     {
@@ -238,27 +221,51 @@ export default function ServicesPage() {
       icon: 'SparklesIcon',
       painlessFeature: 'Non-invasive bonding, no drilling required',
       duration: '15-20 minutes',
-      startingPrice: 1500,
       isEmergency: false,
     },
     {
-      id: 16,
-      title: 'Emergency Dental Care',
-      slug: 'emergency-care',
-      category: 'Emergency',
+      id: 17,
+      title: 'Teeth Bleaching',
+      slug: 'teeth-bleaching',
+      category: 'Cosmetic',
       description:
-        '24/7 urgent dental care for severe pain, trauma, knocked-out teeth, and dental infections. Immediate relief and treatment available with same-day appointments for dental emergencies.',
-      image: 'https://img.rocket.new/generatedImages/rocket_gen_img_1d7afda72-1765054215254.png',
-      alt: 'Emergency dental treatment room with modern equipment ready for urgent care procedures',
-      icon: 'ExclamationTriangleIcon',
-      painlessFeature: 'Immediate pain relief with emergency protocols',
-      duration: 'Varies by emergency',
-      startingPrice: 3000,
-      isEmergency: true,
+        'Professional dental-grade bleaching to remove deep intrinsic stains and lighten teeth beyond their natural shade. Safe, effective, and monitored for exceptional brilliance.',
+      image: '/assets/images/treatments/teeth_bleaching.png',
+      alt: 'Professional teeth bleaching procedure with protective gum barrier and specialized LED light',
+      icon: 'SparklesIcon',
+      painlessFeature: 'Precision gum protection & desensitizing agents',
+      duration: '60-90 minutes',
+      isEmergency: false,
+    },
+    {
+      id: 18,
+      title: 'CBCT Scan',
+      slug: 'cbct-scan',
+      category: 'Advanced Tech',
+      description:
+        'High-definition 3D dental imaging for precise diagnostics and treatment planning. Get comprehensive views of teeth, bone, and nerves with minimal radiation.',
+      image: '/assets/images/treatments/cbct.png',
+      alt: 'Professional dental CBCT machine capturing a 3D scan of a patient skull and jaw',
+      icon: 'MagnifyingGlassIcon',
+      painlessFeature: 'Quick, non-invasive 3D imaging',
+      duration: '5-10 minutes',
+      isEmergency: false,
+    },
+    {
+      id: 19,
+      title: 'Dental Restoration',
+      slug: 'dental-restoration',
+      category: 'Restorative',
+      description:
+        'Comprehensive solutions to repair and rebuild damaged teeth. From fillings to bridges, we restore your smile’s function and natural appearance.',
+      image: '/assets/images/treatments/dental_restoration.jpeg',
+      alt: 'Close-up of a dental restoration procedure showing a perfectly repaired tooth blending with natural teeth',
+      icon: 'ArrowPathIcon',
+      painlessFeature: 'Gentle, minimally invasive techniques',
+      duration: 'Varies by procedure',
+      isEmergency: false,
     },
   ];
-
-  services.push(...newServices);
 
   const treatmentSteps = [
     {
@@ -319,7 +326,7 @@ export default function ServicesPage() {
     {
       id: 'discolored',
       name: 'Discolored or Stained Teeth',
-      relatedTreatments: ['Teeth Whitening', 'Dental Veneers'],
+      relatedTreatments: ['Teeth Whitening', 'Teeth Bleaching', 'Dental Veneers'],
     },
     {
       id: 'crooked',
@@ -344,7 +351,7 @@ export default function ServicesPage() {
 
       <main className="">
         <ScrollAnimation>
-          <section className="py-12 md:py-16 lg:py-24 relative overflow-hidden">
+          <section className="pt-28 pb-12 md:pt-32 md:pb-16 lg:pt-40 lg:pb-24 relative overflow-hidden">
             {/* Background with Gradient Mask for Dissolve Effect */}
             <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-background to-secondary/5 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]">
               <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -370,21 +377,21 @@ export default function ServicesPage() {
                   20+ years of expertise to deliver exceptional results.
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="flex flex-row items-center justify-center gap-3 md:gap-4">
                   <Link
                     href="/book-appointment"
-                    className="w-full sm:w-auto px-8 py-4 bg-conversion hover:bg-conversion/90 text-conversion-foreground text-base md:text-lg font-cta font-semibold rounded-lg shadow-elevation-md hover:shadow-elevation-lg transition-all duration-fast hover:-translate-y-0.5 flex items-center justify-center space-x-2"
+                    className="flex-1 sm:w-auto px-4 md:px-8 py-4 bg-conversion hover:bg-conversion/90 text-conversion-foreground text-sm md:text-lg font-cta font-semibold rounded-lg shadow-elevation-md hover:shadow-elevation-lg transition-all duration-fast hover:-translate-y-0.5 flex items-center justify-center space-x-2"
                   >
                     <Icon name="CalendarIcon" size={20} variant="solid" />
-                    <span>Book Appointment</span>
+                    <span className="whitespace-nowrap">Book Appointment</span>
                   </Link>
 
                   <Link
                     href="tel:+918449830107"
-                    className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-muted text-primary border-2 border-primary text-base md:text-lg font-semibold rounded-lg transition-all duration-fast flex items-center justify-center space-x-2"
+                    className="flex-1 sm:w-auto px-4 md:px-8 py-4 bg-white hover:bg-muted text-primary border-2 border-primary text-sm md:text-lg font-semibold rounded-lg transition-all duration-fast flex items-center justify-center space-x-2"
                   >
                     <Icon name="PhoneIcon" size={20} variant="solid" />
-                    <span>Call Now</span>
+                    <span className="whitespace-nowrap">Call Now</span>
                   </Link>
                 </div>
               </div>

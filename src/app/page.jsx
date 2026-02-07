@@ -1,5 +1,4 @@
 import Header from '@/components/common/Header';
-import ScrollAnimation from '@/components/common/ScrollAnimation';
 import HeroSection from './homepage/components/HeroSection';
 import VideoTestimonials from './homepage/components/testimonials';
 import TreatmentSpecialties from './homepage/components/TreatmentSpecialties';

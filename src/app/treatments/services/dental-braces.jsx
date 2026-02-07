@@ -38,9 +38,9 @@ const DentalBraces = () => {
     {
       title: 'Types of Braces',
       content: `We offer:
-Ã¢‚¬¢ Metal Braces: Traditional, durable, and most cost-effective.
-Ã¢‚¬¢ Ceramic Braces: Tooth-colored brackets that blend in with your teeth for a more subtle look.
-Ã¢‚¬¢ Self-Ligating Braces: Advanced brackets that use a slide mechanism instead of elastics, often reducing treatment time.`,
+• Metal Braces: Traditional, durable, and most cost-effective.
+• Ceramic Braces: Tooth-colored brackets that blend in with your teeth for a more subtle look.
+• Self-Ligating Braces: Advanced brackets that use a slide mechanism instead of elastics, often reducing treatment time.`,
     },
     {
       title: 'Treatment Duration',

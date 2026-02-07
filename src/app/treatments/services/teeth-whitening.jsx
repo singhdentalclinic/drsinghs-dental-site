@@ -39,8 +39,8 @@ const TeethWhitening = () => {
     {
       title: 'Treatment Options',
       content: `We provide two convenient ways to whiten your teeth:
-Ã¢‚¬¢ In - Office Whitening: Fastest results, perfect for special occasions.
-Ã¢‚¬¢ Professional Take - Home Kits: Custom - fitted trays with clinical - grade gel for gradual whitening at your own pace.`,
+• In-Office Whitening: Fastest results, perfect for special occasions.
+• Professional Take-Home Kits: Custom-fitted trays with clinical-grade gel for gradual whitening at your own pace.`,
     },
     {
       title: 'Long-Lasting Brilliance',

@@ -34,10 +34,10 @@ const PreventiveCare = () => {
     {
       title: 'Our Preventive Services',
       content: `A comprehensive preventive plan includes:
-Ã¢‚¬¢ Regular Dental Check - ups: Every 6 months to monitor your oral health.
-Ã¢‚¬¢ Professional Cleaning(Scaling): To remove plaque and tartar that brushing can't reach.
-Ã¢‚¬¢ Fluoride Treatments: To strengthen enamel and prevent decay.
-Ã¢‚¬¢ Dental Sealants: Thin coatings that protect the chewing surfaces of back teeth.`,
+• Regular Dental Check-ups: Every 6 months to monitor your oral health.
+• Professional Cleaning (Scaling): To remove plaque and tartar that brushing can't reach.
+• Fluoride Treatments: To strengthen enamel and prevent decay.
+• Dental Sealants: Thin coatings that protect the chewing surfaces of back teeth.`,
     },
     {
       title: 'Prevention for All Ages',
