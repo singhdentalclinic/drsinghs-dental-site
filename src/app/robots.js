@@ -1,12 +1,9 @@
 export default function robots() {
     return {
-        rules: [
-            {
-                userAgent: "*",
-                allow: "/",
-                disallow: ["/api/"],
-            },
-        ],
+        rules: {
+            userAgent: "*",
+            allow: "/",
+        },
         sitemap: "https://www.drsinghdental.com/sitemap.xml",
     };
 }

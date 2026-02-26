@@ -23,6 +23,26 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.cdnfonts.com/css/amsterdam-handwriting" rel="stylesheet" />
         <link href="https://fonts.cdnfonts.com/css/geist-mono" rel="stylesheet" />
         <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Dentist',
+              name: 'Singh Dental Clinic and Implant Center',
+              url: 'https://www.drsinghdental.com',
+              telephone: '+918449830107',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Ranikhet Rd',
+                addressLocality: 'Ramnagar',
+                addressRegion: 'Uttarakhand',
+                postalCode: '244715',
+                addressCountry: 'IN',
+              },
+            }),
+          }}
+        />
       </head>
 
       <body className="relative">
