@@ -21,14 +21,14 @@ export default function EmergencyContact({ className = '' }) {
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="tel:+911234567890"
+              href="tel:+918449830107"
               className="flex items-center justify-center space-x-2 px-6 py-3 bg-error text-error-foreground font-semibold rounded-md hover:bg-error/90 shadow-elevation-sm hover:shadow-elevation-md transition-all duration-300"
             >
               <Icon name="PhoneIcon" size={20} variant="solid" />
-              <span>Call Emergency: +91 123 456 7890</span>
+              <span>Call Emergency: +91 8449830107</span>
             </a>
             <a
-              href="https://wa.me/911234567890"
+              href="https://wa.me/918449830107"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center space-x-2 px-6 py-3 bg-success text-success-foreground font-semibold rounded-md hover:bg-success/90 shadow-elevation-sm hover:shadow-elevation-md transition-all duration-300"
