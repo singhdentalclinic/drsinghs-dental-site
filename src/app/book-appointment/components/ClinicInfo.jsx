@@ -12,8 +12,8 @@ export default function ClinicInfo({ className = '' }) {
     {
       icon: 'PhoneIcon',
       label: 'Phone',
-      value: '+91 123 456 7890',
-      link: 'tel:+911234567890',
+      value: '+91 8449830107',
+      link: 'tel:+918449830107',
     },
     {
       icon: 'EnvelopeIcon',
