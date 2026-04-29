@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import Breadcrumbs from '@/components/common/Breadcrumbs';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 import ScrollAnimation from '@/components/common/ScrollAnimation';
@@ -18,14 +19,10 @@ const ServiceDetail = ({
   return (
     <div className="bg-background min-h-screen pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Back Link */}
-        <Link
-          href="/treatments"
-          className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-colors"
-        >
-          <Icon name="ArrowLeftIcon" size={20} className="mr-2" />
-          <span>Back to Treatments</span>
-        </Link>
+        {/* Breadcrumbs */}
+        <div className="mb-8 -ml-4">
+          <Breadcrumbs />
+        </div>
 
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 md:mb-24">

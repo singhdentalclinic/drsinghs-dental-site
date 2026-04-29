@@ -65,7 +65,7 @@ const DesktopLayout = ({ faqData, activeIndex, setActiveIndex }) => (
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="bg-blue-50/80 border border-blue-100/50 rounded-2xl p-8 md:p-10 h-full flex flex-col justify-center"
+            className="bg-muted border border-muted rounded-2xl p-8 md:p-10 h-full flex flex-col justify-center"
           >
             <div className="flex items-start gap-4 mb-4">
               <div className="p-2 bg-primary/10 rounded-lg text-primary">
@@ -128,7 +128,7 @@ const MobileLayout = ({ faqData }) => {
                 transition={{ duration: 0.2 }}
                 className="overflow-hidden"
               >
-                <div className="p-4 mb-4 font-body text-sm text-text-secondary leading-relaxed bg-blue-50/80 rounded-lg">
+                <div className="p-4 mb-4 font-body text-sm text-text-secondary leading-relaxed bg-muted rounded-lg">
                   {item.answer}
                 </div>
               </motion.div>

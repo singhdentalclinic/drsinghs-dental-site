@@ -5,7 +5,7 @@ const SOCIAL_LINKS = [
   {
     name: 'Facebook',
     icon: '/assets/images/facebook_logo.png',
-    gradient: 'from-blue-600 via-blue-500 to-blue-400',
+    gradient: 'from-primary via-secondary to-secondary',
     url: 'https://www.facebook.com/singhdentalandimplant',
   },
   {

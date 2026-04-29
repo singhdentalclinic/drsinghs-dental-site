@@ -57,7 +57,7 @@ export default function TreatmentSpecialties({ treatments }) {
                 boxShadow:
                   '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
               }}
-              className="flex-none w-[85vw] snap-center sm:w-auto group bg-white rounded-xl border border-gray-100 shadow-elevation-sm overflow-hidden"
+              className="flex-none w-[85vw] snap-center sm:w-auto group bg-white rounded-xl border border-muted shadow-elevation-sm overflow-hidden"
               style={{ willChange: 'transform, opacity, filter' }}
             >
               <div className="aspect-[4/3] overflow-hidden">

@@ -1,7 +1,10 @@
 import Header from '@/components/common/Header';
-import InstagramConnect from './components/Connectcard';
+import Breadcrumbs from '@/components/common/Breadcrumbs';
+import dynamic from 'next/dynamic';
 import ScrollAnimation from '@/components/common/ScrollAnimation';
-import PatientStoriesInteractive from './components/PatientStoriesInteractive';
+
+const InstagramConnect = dynamic(() => import('./components/Connectcard'), { ssr: false });
+const PatientStoriesInteractive = dynamic(() => import('./components/PatientStoriesInteractive'), { ssr: false });
 import Link from 'next/link';
 
 export const metadata = {
@@ -409,10 +412,15 @@ export default function PatientStoriesPage() {
 
   return (
     <div
-      className="min-h-screen bg-background scroll-smooth"
+      className="min-h-screen bg-background scroll-smooth relative"
       style={{ scrollSnapType: 'y proximity' }}
     >
       <Header transparent={true} />
+      <div className="absolute top-16 md:top-20 left-0 w-full px-6 xl:px-12 z-40 pointer-events-none">
+        <div className="pointer-events-auto w-fit">
+          <Breadcrumbs />
+        </div>
+      </div>
       <main>
         <ScrollAnimation>
           <section className="py-0" style={{ scrollSnapAlign: 'start' }}>

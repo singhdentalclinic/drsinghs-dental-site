@@ -188,9 +188,9 @@ export default function PatientStoriesInteractive({
     <div className="space-y-8 md:space-y-12">
       {/* Header Section */}
       <div className="text-center mb-8 md:mb-12">
-        <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-sky-50 border border-sky-100">
-          <Icon name="SparklesIcon" size={16} className="text-sky-500" variant="solid" />
-          <span className="font-body text-sm font-medium text-sky-700">Patient Stories</span>
+        <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-muted border border-muted">
+          <Icon name="SparklesIcon" size={16} className="text-secondary" variant="solid" />
+          <span className="font-body text-sm font-medium text-primary">Patient Stories</span>
         </div>
         <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
           Real Stories, Real Transformations
@@ -202,9 +202,9 @@ export default function PatientStoriesInteractive({
       </div>
 
       <div className="flex flex-col items-center mb-6 md:mb-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-sky-50 border border-sky-100">
-          <Icon name="SparklesIcon" size={16} className="text-sky-500" variant="solid" />
-          <span className="font-body text-sm font-medium text-sky-700">Transformations</span>
+        <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-muted border border-muted">
+          <Icon name="SparklesIcon" size={16} className="text-secondary" variant="solid" />
+          <span className="font-body text-sm font-medium text-primary">Transformations</span>
         </div>
         <h2 className="font-headline text-[clamp(1.2rem,5vw,2.25rem)] font-semibold text-text-primary whitespace-nowrap px-2">
           Before & After Transformations
@@ -234,9 +234,9 @@ export default function PatientStoriesInteractive({
       {filteredVideos?.length > 0 && (
         <section className="relative">
           <div className="flex flex-col items-center justify-center mb-6 md:mb-10 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-sky-50 border border-sky-100">
-              <Icon name="VideoCameraIcon" size={16} className="text-sky-500" variant="solid" />
-              <span className="font-body text-sm font-medium text-sky-700">Testimonials</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-muted border border-muted">
+              <Icon name="VideoCameraIcon" size={16} className="text-secondary" variant="solid" />
+              <span className="font-body text-sm font-medium text-primary">Testimonials</span>
             </div>
             <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl font-semibold text-text-primary">
               Video Testimonials
@@ -289,13 +289,13 @@ export default function PatientStoriesInteractive({
             <button
               onClick={() => scrollToItem(activeVideoIndex - 1)}
               disabled={activeVideoIndex === 0}
-              className={`p-2 rounded-full bg-white shadow-md border border-gray-100 transition-all duration-200 ${
+              className={`p-2 rounded-full bg-white shadow-md border border-muted transition-all duration-200 ${
                 activeVideoIndex === 0
                   ? 'opacity-30 cursor-not-allowed'
                   : 'hover:scale-110 active:scale-95'
               }`}
             >
-              <Icon name="ChevronLeftIcon" size={20} className="text-gray-700" />
+              <Icon name="ChevronLeftIcon" size={20} className="text-text-primary" />
             </button>
 
             <div className="flex gap-2">
@@ -305,8 +305,8 @@ export default function PatientStoriesInteractive({
                   onClick={() => scrollToItem(index)}
                   className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                     activeVideoIndex === index
-                      ? 'bg-gray-900 w-3 h-3'
-                      : 'bg-gray-300 hover:bg-gray-400'
+                      ? 'bg-primary w-3 h-3'
+                      : 'bg-tertiary hover:bg-tertiary'
                   }`}
                 />
               ))}
@@ -315,13 +315,13 @@ export default function PatientStoriesInteractive({
             <button
               onClick={() => scrollToItem(activeVideoIndex + 1)}
               disabled={activeVideoIndex === filteredVideos.length - 1}
-              className={`p-2 rounded-full bg-white shadow-md border border-gray-100 transition-all duration-200 ${
+              className={`p-2 rounded-full bg-white shadow-md border border-muted transition-all duration-200 ${
                 activeVideoIndex === filteredVideos.length - 1
                   ? 'opacity-30 cursor-not-allowed'
                   : 'hover:scale-110 active:scale-95'
               }`}
             >
-              <Icon name="ChevronRightIcon" size={20} className="text-gray-700" />
+              <Icon name="ChevronRightIcon" size={20} className="text-text-primary" />
             </button>
           </div>
         </section>
@@ -340,9 +340,9 @@ export default function PatientStoriesInteractive({
       {filteredTestimonials?.length > 0 && (
         <section>
           <div className="flex flex-col items-center justify-center mb-6 md:mb-10 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-sky-50 border border-sky-100">
-              <Icon name="BookOpenIcon" size={16} className="text-sky-500" variant="solid" />
-              <span className="font-body text-sm font-medium text-sky-700">Patient Reviews</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-muted border border-muted">
+              <Icon name="BookOpenIcon" size={16} className="text-secondary" variant="solid" />
+              <span className="font-body text-sm font-medium text-primary">Patient Reviews</span>
             </div>
             <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl font-semibold text-text-primary">
               Patient Testimonials
@@ -387,9 +387,9 @@ export default function PatientStoriesInteractive({
       {filteredCaseStudies?.length > 0 && (
         <section>
           <div className="flex flex-col items-center justify-center mb-6 md:mb-10 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-sky-50 border border-sky-100">
-              <Icon name="DocumentTextIcon" size={16} className="text-sky-500" variant="solid" />
-              <span className="font-body text-sm font-medium text-sky-700">Case Study</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-muted border border-muted">
+              <Icon name="DocumentTextIcon" size={16} className="text-secondary" variant="solid" />
+              <span className="font-body text-sm font-medium text-primary">Case Study</span>
             </div>
             <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl font-semibold text-text-primary">
               Detailed Case Studies

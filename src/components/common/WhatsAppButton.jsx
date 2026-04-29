@@ -36,13 +36,12 @@ export default function WhatsAppButton() {
       href="https://wa.me/918449830107"
       target="_blank"
       rel="noopener noreferrer"
-      className={`fixed bottom-6 right-6 z-50 group hidden md:flex items-center justify-end transition-all duration-500 ease-in-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-      }`}
+      className={`fixed bottom-6 right-6 z-50 group hidden md:flex items-center justify-end transition-all duration-500 ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        }`}
       aria-label="Chat with us on WhatsApp"
     >
       {/* Tooltip */}
-      <span className="absolute right-[calc(100%+16px)] top-1/2 -translate-y-1/2 bg-green-50 text-gray-800 px-4 py-2 rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] text-sm font-medium whitespace-nowrap opacity-0 bg-opacity-100 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 hidden md:block">
+      <span className="absolute right-[calc(100%+16px)] top-1/2 -translate-y-1/2 bg-green-50 text-text-primary px-4 py-2 rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] text-sm font-medium whitespace-nowrap opacity-0 bg-opacity-100 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 hidden md:block">
         Chat with us
         {/* Arrow pointing right */}
         <span className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-3 h-3 bg-white transform rotate-45"></span>

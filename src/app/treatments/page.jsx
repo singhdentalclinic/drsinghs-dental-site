@@ -1,4 +1,5 @@
 import Header from '@/components/common/Header';
+import Breadcrumbs from '@/components/common/Breadcrumbs';
 import ServicesInteractive from './components/ServiceInteractive';
 import ScrollAnimation from '@/components/common/ScrollAnimation';
 import Link from 'next/link';
@@ -346,8 +347,13 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative">
       <Header transparent={true} />
+      <div className="absolute top-16 md:top-20 left-0 w-full px-6 xl:px-12 z-40 pointer-events-none">
+        <div className="pointer-events-auto w-fit">
+          <Breadcrumbs />
+        </div>
+      </div>
 
       <main className="">
         <ScrollAnimation>
@@ -361,8 +367,8 @@ export default function ServicesPage() {
             <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
               <div className="max-w-4xl mx-auto text-center">
                 <div className="inline-flex items-center space-x-2 px-4 py-2 bg-accent/10 rounded-full mb-6">
-                  <Icon name="SparklesIcon" size={20} variant="solid" className="text-orange-500" />
-                  <span className="text-sm md:text-base font-medium text-orange-500">
+                  <Icon name="SparklesIcon" size={20} variant="solid" className="text-secondary" />
+                  <span className="text-sm md:text-base font-medium text-secondary">
                     Comprehensive Dental Solutions
                   </span>
                 </div>
@@ -434,7 +440,7 @@ export default function ServicesPage() {
                   href="/book-appointment"
                   className="inline-flex items-center space-x-2 px-8 py-4 bg-white hover:bg-white/90 text-primary text-base md:text-lg font-cta font-semibold rounded-lg shadow-elevation-lg hover:shadow-elevation-md transition-all duration-fast hover:-translate-y-0.5"
                 >
-                  <span>Schedule Your Visit</span>
+                  <span>Book Appointment</span>
                   <Icon name="ArrowRightIcon" size={20} variant="outline" />
                 </Link>
               </div>

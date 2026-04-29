@@ -82,7 +82,7 @@ export default function VideoTestimonials() {
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight"
+            className="text-4xl md:text-5xl font-bold text-text-primary tracking-tight"
           >
             Hear from Our Patients
           </motion.h2>
@@ -140,7 +140,7 @@ export default function VideoTestimonials() {
                 </div>
 
                 <div className="mt-4 text-left px-2">
-                  <h4 className="text-xl font-bold text-gray-900 tracking-tight">
+                  <h4 className="text-xl font-bold text-text-primary tracking-tight">
                     {testimonial.name}
                   </h4>
                   <p className="text-sm font-semibold text-primary">{testimonial.treatment}</p>
@@ -168,7 +168,7 @@ export default function VideoTestimonials() {
                     href="https://g.page/r/Cdl5btRrYBwjEBM/review"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white rounded-xl shadow-2xl border border-gray-100 p-4 flex items-center space-x-3 w-[210px] hover:bg-gray-50 transition-colors cursor-pointer"
+                    className="bg-white rounded-xl shadow-2xl border border-muted p-4 flex items-center space-x-3 w-[210px] hover:bg-muted transition-colors cursor-pointer"
                   >
                     <div className="bg-white p-1 rounded-full shrink-0 relative w-8 h-8">
                       <Image
@@ -180,18 +180,18 @@ export default function VideoTestimonials() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h5 className="text-sm font-bold text-gray-900 truncate">
+                      <h5 className="text-sm font-bold text-text-primary truncate">
                         Singh Dental Clinic
                       </h5>
                       <div className="flex items-center space-x-1 mt-0.5">
-                        <span className="font-bold text-gray-900 leading-none text-sm">4.8</span>
+                        <span className="font-bold text-text-primary leading-none text-sm">4.8</span>
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
-                            <StarIcon key={i} className="w-3 h-3 text-yellow-400" />
+                            <StarIcon key={i} className="w-3 h-3 text-tertiary" />
                           ))}
                         </div>
                       </div>
-                      <p className="text-[10px] text-gray-500 font-medium mt-0.5 truncate">
+                      <p className="text-[10px] text-text-secondary font-medium mt-0.5 truncate">
                         Based on all reviews
                       </p>
                     </div>

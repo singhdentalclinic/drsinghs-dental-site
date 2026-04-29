@@ -33,7 +33,7 @@ export default function TreatmentFinder({ symptoms }) {
   };
 
   return (
-    <div className="w-full bg-white border border-gray-200 rounded-lg p-6 md:p-8 lg:p-10 shadow-elevation-sm">
+    <div className="w-full bg-white border border-tertiary rounded-lg p-6 md:p-8 lg:p-10 shadow-elevation-sm">
       <div className="flex items-center space-x-3 mb-6 md:mb-8">
         <div className="p-3 bg-secondary/10 rounded-lg">
           <Icon name="MagnifyingGlassIcon" size={24} variant="solid" className="text-secondary" />
