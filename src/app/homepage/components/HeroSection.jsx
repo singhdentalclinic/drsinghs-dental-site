@@ -36,23 +36,23 @@ const GoogleIcon = () => (
 const HERO_SLIDES = [
   {
     id: 1,
-    desktopImage: '/assets/images/banner/desktop_banner-1.png',
-    tabletImage: '/assets/images/banner/tablet_banner-1.png',
-    mobileImage: '/assets/images/banner/mobile_banner-1.png',
+    desktopImage: '/assets/images/banner/desktop_banner-1.webp',
+    tabletImage: '/assets/images/banner/tablet_banner-1.webp',
+    mobileImage: '/assets/images/banner/mobile_banner-1.webp',
     alt: 'Dr. Pradeep Singh treating a patient with care',
   },
   {
     id: 2,
-    desktopImage: '/assets/images/banner/desktop_banner-2.png',
-    tabletImage: '/assets/images/banner/tablet_banner-2.png',
-    mobileImage: '/assets/images/banner/mobile_banner-2.png',
+    desktopImage: '/assets/images/banner/desktop_banner-2.webp',
+    tabletImage: '/assets/images/banner/tablet_banner-2.webp',
+    mobileImage: '/assets/images/banner/mobile_banner-2.webp',
     alt: 'Before and after cosmetic dentistry results',
   },
   {
     id: 3,
-    desktopImage: '/assets/images/banner/desktop_banner-1.png',
-    tabletImage: '/assets/images/banner/tablet_banner-1.png',
-    mobileImage: '/assets/images/banner/mobile_banner-1.png',
+    desktopImage: '/assets/images/banner/desktop_banner-1.webp',
+    tabletImage: '/assets/images/banner/tablet_banner-1.webp',
+    mobileImage: '/assets/images/banner/mobile_banner-1.webp',
     alt: 'Emergency dental care setup',
   },
 ];
@@ -289,8 +289,8 @@ export default function HeroSection({ stats }) {
                 setCurrentSlideIndex(idx);
               }}
               className={`relative h-1.5 md:h-2 rounded-full overflow-hidden cursor-pointer transition-all duration-500 ease-in-out shadow-sm ${idx === currentSlideIndex
-                  ? 'w-8 md:w-12 bg-white/70'
-                  : 'w-1.5 md:w-2 bg-white/30 hover:bg-white'
+                ? 'w-8 md:w-12 bg-white/70'
+                : 'w-1.5 md:w-2 bg-white/30 hover:bg-white'
                 }`}
               aria-label={`Go to slide ${idx + 1}`}
             >
