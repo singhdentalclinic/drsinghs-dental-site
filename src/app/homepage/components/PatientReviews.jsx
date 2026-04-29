@@ -20,15 +20,15 @@ const splitArray = (array, numParts) => {
 const ReviewCard = ({ review }) => {
   const colors = [
     'bg-emerald-100 text-emerald-600',
-    'bg-sky-100 text-sky-600',
-    'bg-orange-100 text-orange-600',
+    'bg-muted text-primary',
+    'bg-tertiary text-secondary',
     'bg-violet-100 text-violet-600',
-    'bg-rose-100 text-rose-600',
-    'bg-amber-100 text-amber-600',
-    'bg-teal-100 text-teal-600',
-    'bg-indigo-100 text-indigo-600',
-    'bg-fuchsia-100 text-fuchsia-600',
-    'bg-cyan-100 text-cyan-600',
+    'bg-tertiary text-secondary',
+    'bg-tertiary text-secondary',
+    'bg-muted text-primary',
+    'bg-muted text-primary',
+    'bg-tertiary text-secondary',
+    'bg-muted text-primary',
   ];
 
   // Simple hash to consistently pick a color for a name
@@ -36,7 +36,7 @@ const ReviewCard = ({ review }) => {
   const colorClass = colors[nameHash % colors.length];
 
   return (
-    <div className="bg-white rounded-3xl p-8 mb-6 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] border border-gray-100 hover:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.12)] transition-shadow duration-300 relative z-10 isolate">
+    <div className="bg-white rounded-3xl p-8 mb-6 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] border border-muted hover:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.12)] transition-shadow duration-300 relative z-10 isolate">
       <div className="flex items-start space-x-4">
         <div
           className={`w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center ${colorClass}`}
@@ -44,18 +44,18 @@ const ReviewCard = ({ review }) => {
           <Icon name="UserIcon" size={24} variant="solid" />
         </div>
         <div>
-          <h3 className="font-headline text-lg font-bold text-gray-900 leading-tight mb-1">
+          <h3 className="font-headline text-lg font-bold text-text-primary leading-tight mb-1">
             {review.name}
           </h3>
           {/* Render stars for visually premium feel */}
           <div className="flex space-x-0.5">
             {[...Array(5)].map((_, i) => (
-              <Icon key={i} name="StarIcon" size={14} variant="solid" className="text-yellow-400" />
+              <Icon key={i} name="StarIcon" size={14} variant="solid" className="text-tertiary" />
             ))}
           </div>
         </div>
       </div>
-      <p className="mt-4 font-body text-gray-600 leading-relaxed text-[15px]">{review.text}</p>
+      <p className="mt-4 font-body text-secondary leading-relaxed text-[15px]">{review.text}</p>
     </div>
   );
 };
@@ -139,7 +139,7 @@ export default function PatientReviews({ reviews }) {
 
           <motion.h2
             variants={fadeInUp}
-            className="font-headline text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 tracking-tight mb-8"
+            className="font-headline text-4xl md:text-5xl lg:text-7xl font-bold text-text-primary tracking-tight mb-8"
           >
             What Our Patients Say
           </motion.h2>
@@ -155,19 +155,19 @@ export default function PatientReviews({ reviews }) {
                   name="StarIcon"
                   size={28}
                   variant="solid"
-                  className="text-amber-400"
+                  className="text-tertiary"
                 />
               ))}
             </div>
             <div className="flex items-baseline space-x-3">
-              <span className="text-3xl font-bold text-gray-900">4.8/5</span>
-              <span className="text-lg text-gray-500 font-medium">(from all reviews)</span>
+              <span className="text-3xl font-bold text-text-primary">4.8/5</span>
+              <span className="text-lg text-text-secondary font-medium">(from all reviews)</span>
             </div>
           </motion.div>
 
           <motion.p
             variants={fadeInUp}
-            className="font-body text-gray-500 text-lg md:text-xl max-w-2xl mx-auto"
+            className="font-body text-text-secondary text-lg md:text-xl max-w-2xl mx-auto"
           >
             Trusted by thousands of patients across Country
           </motion.p>
@@ -224,7 +224,7 @@ export default function PatientReviews({ reviews }) {
               href="https://g.page/r/Cdl5btRrYBwjEBM/review"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-xl shadow-2xl border border-gray-100 p-4 flex items-center space-x-3 max-w-[240px] hover:bg-gray-50 transition-colors cursor-pointer block relative z-10 isolate text-black no-underline"
+              className="bg-white rounded-xl shadow-2xl border border-muted p-4 flex items-center space-x-3 max-w-[240px] hover:bg-muted transition-colors cursor-pointer block relative z-10 isolate text-black no-underline"
             >
               <div className="bg-white p-1 rounded-full shrink-0 relative w-8 h-8">
                 <Image
@@ -236,16 +236,16 @@ export default function PatientReviews({ reviews }) {
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <h5 className="text-sm font-bold text-gray-900 truncate">Singh Dental Clinic</h5>
+                <h5 className="text-sm font-bold text-text-primary truncate">Singh Dental Clinic</h5>
                 <div className="flex items-center space-x-1 mt-0.5">
-                  <span className="font-bold text-gray-900 leading-none text-sm">4.8</span>
+                  <span className="font-bold text-text-primary leading-none text-sm">4.8</span>
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
-                      <StarIcon key={i} className="w-3 h-3 text-yellow-400" />
+                      <StarIcon key={i} className="w-3 h-3 text-tertiary" />
                     ))}
                   </div>
                 </div>
-                <p className="text-[10px] text-gray-500 font-medium mt-0.5 truncate">
+                <p className="text-[10px] text-text-secondary font-medium mt-0.5 truncate">
                   Based on all reviews
                 </p>
               </div>

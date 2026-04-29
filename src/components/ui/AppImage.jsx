@@ -51,7 +51,7 @@ function AppImage({
     setHasError(false);
   };
 
-  const commonClassName = `${className} ${isLoading ? 'bg-gray-200' : ''} ${onClick ? 'cursor-pointer hover:opacity-90 transition-opacity' : ''}`;
+  const commonClassName = `${className} ${isLoading ? 'bg-tertiary' : ''} ${onClick ? 'cursor-pointer hover:opacity-90 transition-opacity' : ''}`;
 
   // For external URLs or when in doubt, use regular img tag
   if (isExternal && !isLocal) {
@@ -122,7 +122,7 @@ function AppImage({
       <div className={`relative ${className}`}>
         <Image
           {...imageProps}
-          className={`${isLoading ? 'bg-gray-200' : ''} ${onClick ? 'cursor-pointer hover:opacity-90 transition-opacity' : ''}`}
+          className={`${isLoading ? 'bg-tertiary' : ''} ${onClick ? 'cursor-pointer hover:opacity-90 transition-opacity' : ''}`}
           fill
           alt={alt}
           sizes={sizes || '100vw'}

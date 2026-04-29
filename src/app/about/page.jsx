@@ -1,4 +1,5 @@
 import Header from '@/components/common/Header';
+import Breadcrumbs from '@/components/common/Breadcrumbs';
 import ScrollAnimation from '@/components/common/ScrollAnimation';
 import PhilosophySection from '../about/components/PhilosophySection';
 import HeroSection from './components/HeroSection';
@@ -112,8 +113,13 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
       <Header transparent={true} />
+      <div className="absolute top-16 md:top-20 left-0 w-full px-6 xl:px-12 z-40 pointer-events-none">
+        <div className="pointer-events-auto w-fit">
+          <Breadcrumbs />
+        </div>
+      </div>
       <ScrollAnimation>
         <HeroSection hero={heroData} />
       </ScrollAnimation>

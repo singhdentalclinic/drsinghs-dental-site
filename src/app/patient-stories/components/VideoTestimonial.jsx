@@ -61,7 +61,7 @@ export default function VideoTestimonial({
       <div className="mt-3 grid grid-cols-2 gap-2 w-full px-1">
         <div className="flex flex-col">
           <h4 className="text-[15px] font-[600] text-[#333333] leading-tight">{patientName}</h4>
-          <span className="text-[13px] text-gray-500 font-normal">{location}</span>
+          <span className="text-[13px] text-text-secondary font-normal">{location}</span>
         </div>
 
         <p className="text-[13px] font-[600] text-[#f47920] uppercase tracking-normal text-right leading-tight underline decoration-1 underline-offset-2">

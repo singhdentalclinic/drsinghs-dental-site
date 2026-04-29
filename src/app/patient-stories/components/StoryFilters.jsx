@@ -33,11 +33,11 @@ export default function StoryFilters({ categories, onFilterChange }) {
 
   return (
     <div className="w-full relative z-30 mb-8 md:mb-12">
-      <div className="bg-card rounded-lg shadow-elevation-sm border border-gray-100">
+      <div className="bg-card rounded-lg shadow-elevation-sm border border-muted">
         {/* Header Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between p-4 md:p-6 hover:bg-gray-50/50 transition-colors rounded-lg"
+          className="w-full flex items-center justify-between p-4 md:p-6 hover:bg-muted transition-colors rounded-lg"
         >
           <div className="flex flex-col items-start text-left">
             <h3 className="font-headline text-lg md:text-xl font-semibold text-text-primary">
@@ -57,7 +57,7 @@ export default function StoryFilters({ categories, onFilterChange }) {
               </span>
             </div>
             <div
-              className={`p-2 rounded-full transition-all duration-300 ${isOpen ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}
+              className={`p-2 rounded-full transition-all duration-300 ${isOpen ? 'bg-primary text-white' : 'bg-muted text-text-secondary'}`}
             >
               <Icon name="FunnelIcon" size={20} variant={isOpen ? 'solid' : 'outline'} />
             </div>
@@ -69,21 +69,21 @@ export default function StoryFilters({ categories, onFilterChange }) {
           <>
             {/* Backdrop for closing */}
             <div className="fixed inset-0 z-[-1]" onClick={() => setIsOpen(false)} />
-            <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-elevation-lg border border-gray-100 p-4 md:p-6 animate-in fade-in slide-in-from-top-2 duration-300 z-50">
+            <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-elevation-lg border border-muted p-4 md:p-6 animate-in fade-in slide-in-from-top-2 duration-300 z-50">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 <button
                   onClick={() => toggleFilter('all')}
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 border-2 ${
                     selectedFilters.includes('all')
                       ? 'bg-primary/5 border-primary text-primary'
-                      : 'bg-gray-50 border-transparent hover:border-gray-200 text-text-secondary'
+                      : 'bg-muted border-transparent hover:border-tertiary text-text-secondary'
                   }`}
                 >
                   <div
                     className={`w-6 h-6 rounded flex items-center justify-center transition-all ${
                       selectedFilters.includes('all')
                         ? 'bg-primary'
-                        : 'bg-white border-2 border-gray-300'
+                        : 'bg-white border-2 border-tertiary'
                     }`}
                   >
                     {selectedFilters.includes('all') && (
@@ -100,14 +100,14 @@ export default function StoryFilters({ categories, onFilterChange }) {
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 border-2 ${
                       selectedFilters.includes(category?.id)
                         ? 'bg-primary/5 border-primary text-primary'
-                        : 'bg-gray-50 border-transparent hover:border-gray-200 text-text-secondary'
+                        : 'bg-muted border-transparent hover:border-tertiary text-text-secondary'
                     }`}
                   >
                     <div
                       className={`w-6 h-6 rounded flex items-center justify-center transition-all ${
                         selectedFilters.includes(category?.id)
                           ? 'bg-primary'
-                          : 'bg-white border-2 border-gray-300'
+                          : 'bg-white border-2 border-tertiary'
                       }`}
                     >
                       {selectedFilters.includes(category?.id) && (
@@ -119,7 +119,7 @@ export default function StoryFilters({ categories, onFilterChange }) {
                 ))}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-muted flex items-center justify-between">
                 <p className="text-xs text-text-secondary italic">
                   Showing results for {selectedFilters.length}{' '}
                   {selectedFilters.length === 1 ? 'category' : 'categories'}

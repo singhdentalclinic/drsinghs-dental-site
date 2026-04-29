@@ -24,7 +24,7 @@ export default function CTASection({ cta }) {
               href="/book-appointment"
               className="w-full sm:w-auto px-8 py-4 bg-conversion hover:bg-conversion/90 text-conversion-foreground font-cta text-base font-semibold rounded-md shadow-elevation-md hover:shadow-elevation-lg transition-all duration-fast hover:-translate-y-0.5"
             >
-              Book Your Consultation
+              Book Appointment
             </Link>
 
             <Link
@@ -38,12 +38,12 @@ export default function CTASection({ cta }) {
           <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-white/90">
             <div className="flex items-center space-x-2">
               <Icon name="PhoneIcon" size={20} variant="solid" />
-              <span className="font-body text-sm md:text-base">+91 123 456 7890</span>
+              <span className="font-body text-sm md:text-base">+91 84498 30107</span>
             </div>
             <div className="hidden sm:block w-1 h-1 bg-white/50 rounded-full"></div>
             <div className="flex items-center space-x-2">
               <Icon name="ClockIcon" size={20} variant="solid" />
-              <span className="font-body text-sm md:text-base">Mon-Sat: 9 AM - 8 PM</span>
+              <span className="font-body text-sm md:text-base">Mon-Sun: 9 AM - 8 PM</span>
             </div>
           </div>
         </div>

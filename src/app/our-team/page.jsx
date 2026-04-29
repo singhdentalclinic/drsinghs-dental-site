@@ -1,4 +1,5 @@
 import Header from '@/components/common/Header';
+import Breadcrumbs from '@/components/common/Breadcrumbs';
 import TeamSection from './components/TeamSection';
 import ScrollAnimation from '@/components/common/ScrollAnimation';
 import CertificationsSection from './components/CertificationsSection';
@@ -15,7 +16,7 @@ export default function AboutPage() {
     {
       name: 'Dr. Pradeep Singh',
       role: 'Founder & Chief Dental Surgeon',
-      image: '/assets/images/Pradeep-Singh.jpg',
+      image: '/assets/images/clinic/Pradeep-Singh.jpg',
       imageAlt:
         'Professional portrait of Dr. Pradeep Singh, middle-aged Indian male dentist with warm smile in white dental coat',
       bio: 'With over 20 years of dedicated practice, Dr. Singh has transformed thousands of smiles across Uttarakhand. His patient-first approach combines clinical excellence with genuine compassion, making even the most anxious patients feel at ease.',
@@ -114,8 +115,13 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
       <Header />
+      <div className="absolute top-16 md:top-20 left-0 w-full px-6 xl:px-12 z-40 pointer-events-none">
+        <div className="pointer-events-auto w-fit">
+          <Breadcrumbs />
+        </div>
+      </div>
       <ScrollAnimation>
         <TeamSection team={teamData} />
       </ScrollAnimation>

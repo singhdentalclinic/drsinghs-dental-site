@@ -153,7 +153,7 @@ export default function ContactForm({ inquiryTypes }) {
                   onChange={handleChange}
                   className={`w-full px-4 py-3 border ${
                     errors?.name ? 'border-destructive' : 'border-input'
-                  } rounded-md font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary transition-all bg-gray-50`}
+                  } rounded-md font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary transition-all bg-muted`}
                   placeholder="Enter your full name"
                 />
                 {errors?.name && <p className="mt-1 text-xs text-destructive">{errors?.name}</p>}
@@ -174,7 +174,7 @@ export default function ContactForm({ inquiryTypes }) {
                   onChange={handleChange}
                   className={`w-full px-4 py-3 border ${
                     errors?.email ? 'border-destructive' : 'border-input'
-                  } rounded-md font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary transition-all bg-gray-50`}
+                  } rounded-md font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary transition-all bg-muted`}
                   placeholder="your.email@example.com (Optional)"
                 />
                 {errors?.email && <p className="mt-1 text-xs text-destructive">{errors?.email}</p>}
@@ -196,7 +196,7 @@ export default function ContactForm({ inquiryTypes }) {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 border ${
                       errors?.phone ? 'border-destructive' : 'border-input'
-                    } rounded-md font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary transition-all bg-gray-50`}
+                    } rounded-md font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary transition-all bg-muted`}
                     placeholder="Enter your phone number"
                   />
                   {errors?.phone && (
@@ -218,7 +218,7 @@ export default function ContactForm({ inquiryTypes }) {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 border ${
                       errors?.inquiryType ? 'border-destructive' : 'border-input'
-                    } rounded-md font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary transition-all bg-gray-50`}
+                    } rounded-md font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary transition-all bg-muted`}
                   >
                     <option value="">Select type</option>
                     {inquiryTypes?.map((type, index) => (
@@ -248,7 +248,7 @@ export default function ContactForm({ inquiryTypes }) {
                   rows="4"
                   className={`w-full px-4 py-3 border ${
                     errors?.message ? 'border-destructive' : 'border-input'
-                  } rounded-md font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none bg-gray-50`}
+                  } rounded-md font-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none bg-muted`}
                   placeholder="Your message..."
                 />
                 {errors?.message && (

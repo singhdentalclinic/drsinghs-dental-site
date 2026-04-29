@@ -13,7 +13,7 @@ export default function ContactDetailsSection({ scheduleData, contactData }) {
           {/* Left Column: Map & Location Card (Spans 2 columns on desktop) */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-elevation-sm overflow-hidden flex flex-col md:flex-row h-[500px]">
             {/* Map Area */}
-            <div className="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 relative border-8 border-white rounded-3xl overflow-hidden">
+            <div className="w-full md:w-1/2 h-64 md:h-auto bg-muted relative border-8 border-white rounded-3xl overflow-hidden">
               <iframe
                 src={`https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d869.047812782366!2d79.1268153!3d29.3939608!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390a13779f87115f%3A0x231c606bd46e79d9!2sSingh%20Dental%20Clinic%20and%20Implant%20center%20-%20Dental%20Clinic%20in%20Ramnagar!5e0!3m2!1sen!2sin!4v1767253615160!5m2!1sen!2sin`}
                 width="100%"
@@ -30,7 +30,7 @@ export default function ContactDetailsSection({ scheduleData, contactData }) {
             <div className="w-full md:w-1/2 p-5 md:p-6 flex flex-col">
               {/* Clinic Image Placeholder - Replacing with a generic dental clinic interior or using a placeholder if no asset exists */}
               {/* Ideally this would be a real image from the project assets */}
-              <div className="w-full flex-1 bg-gray-50 rounded-lg mb-4 overflow-hidden relative border border-gray-100">
+              <div className="w-full flex-1 bg-muted rounded-lg mb-4 overflow-hidden relative border border-muted">
                 <Image
                   src="/assets/images/clinic/clinic_building.png"
                   alt="Singh Dental Clinic Building"
@@ -61,7 +61,7 @@ export default function ContactDetailsSection({ scheduleData, contactData }) {
           {/* Right Column: Opening Hours */}
           <div className="lg:col-span-1 bg-white rounded-xl shadow-elevation-sm p-6 md:p-8 h-[500px] flex flex-col justify-center">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 rounded-full bg-blue-50">
+              <div className="p-2 rounded-full bg-muted">
                 <Icon name="ClockIcon" size={24} variant="outline" className="text-primary" />
               </div>
               <h3 className="font-headline text-xl font-bold text-text-primary">Opening Hours</h3>
@@ -73,7 +73,7 @@ export default function ContactDetailsSection({ scheduleData, contactData }) {
                 return (
                   <div
                     key={index}
-                    className={`flex items-center justify-between py-1.5 border-b border-gray-100 last:border-0 ${isToday ? 'bg-blue-50 -mx-4 px-4 rounded-md' : ''}`}
+                    className={`flex items-center justify-between py-1.5 border-b border-muted last:border-0 ${isToday ? 'bg-muted -mx-4 px-4 rounded-md' : ''}`}
                   >
                     <div className="flex items-center gap-2">
                       {isToday && <span className="w-2 h-2 rounded-full bg-primary"></span>}

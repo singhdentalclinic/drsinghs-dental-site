@@ -35,7 +35,7 @@ export default function DoctorExpertise({ doctor }) {
           whileInView="animate"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <div className="inline-flex items-center space-x-2 px-6 py-2 bg-[#E6F4FE] text-[#009EE2] rounded-full border border-blue-50">
+          <div className="inline-flex items-center space-x-2 px-6 py-2 bg-[#E6F4FE] text-[#009EE2] rounded-full border border-muted">
             <Icon name="UserIcon" size={20} variant="solid" className="text-[#009EE2]" />
             <span className="font-body text-sm md:text-base font-semibold">Meet Your Dentist</span>
           </div>
@@ -63,7 +63,7 @@ export default function DoctorExpertise({ doctor }) {
                   />
                 </div>
                 {/* Mobile Experience Badge */}
-                <div className="absolute -bottom-1 -right-1 bg-white rounded-lg shadow-elevation-sm border border-slate-100 px-2 py-0.5 flex items-center gap-1.5 z-10">
+                <div className="absolute -bottom-1 -right-1 bg-white rounded-lg shadow-elevation-sm border border-muted px-2 py-0.5 flex items-center gap-1.5 z-10">
                   <span className="text-primary font-bold text-lg leading-none">
                     {doctor?.experience}+
                   </span>
@@ -78,7 +78,7 @@ export default function DoctorExpertise({ doctor }) {
                 <h2 className="font-headline text-2xl font-bold text-text-primary leading-tight">
                   {doctor?.name}
                 </h2>
-                <div className="inline-flex px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-bold border border-blue-100">
+                <div className="inline-flex px-3 py-1 bg-muted text-primary rounded-full text-xs font-bold border border-muted">
                   {doctor?.qualification}
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function DoctorExpertise({ doctor }) {
 
             {/* Desktop Only Image Container */}
             <div className="relative w-fit mx-0 hidden md:block">
-              <div className="w-32 h-40 md:w-full md:h-auto md:aspect-[3/4] overflow-hidden rounded-2xl shadow-elevation-lg border-2 border-slate-100 cursor-zoom-in touch-none active:scale-95 transition-transform">
+              <div className="w-32 h-40 md:w-full md:h-auto md:aspect-[3/4] overflow-hidden rounded-2xl shadow-elevation-lg border-2 border-muted cursor-zoom-in touch-none active:scale-95 transition-transform">
                 <AppImage
                   src={doctor?.image}
                   alt={doctor?.alt}
@@ -98,7 +98,7 @@ export default function DoctorExpertise({ doctor }) {
               </div>
 
               <motion.div
-                className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-muted rounded-xl shadow-elevation-lg border border-slate-200 p-3 md:p-6 z-20"
+                className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-muted rounded-xl shadow-elevation-lg border border-tertiary p-3 md:p-6 z-20"
                 style={{ willChange: 'transform, opacity, filter' }}
                 variants={fadeInUp}
                 initial="initial"
@@ -115,13 +115,13 @@ export default function DoctorExpertise({ doctor }) {
                       name="AcademicCapIcon"
                       size={20}
                       variant="solid"
-                      className="text-orange-500 md:hidden"
+                      className="text-secondary md:hidden"
                     />
                     <Icon
                       name="AcademicCapIcon"
                       size={32}
                       variant="solid"
-                      className="text-orange-500 hidden md:block"
+                      className="text-secondary hidden md:block"
                     />
                   </div>
                   <div>
@@ -147,13 +147,13 @@ export default function DoctorExpertise({ doctor }) {
             <div className="space-y-4">
               <motion.div
                 variants={fadeInUp}
-                className="border border-slate-200 rounded-2xl p-4 md:p-6 space-y-4 bg-white shadow-card"
+                className="border border-tertiary rounded-2xl p-4 md:p-6 space-y-4 bg-white shadow-card"
               >
                 <div className="hidden md:block">
                   <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-semibold text-text-primary mb-2">
                     {doctor?.name}
                   </h2>
-                  <p className="font-body text-base md:text-lg text-blue-500 font-medium">
+                  <p className="font-body text-base md:text-lg text-secondary font-medium">
                     {doctor?.qualification}
                   </p>
                 </div>
@@ -167,7 +167,7 @@ export default function DoctorExpertise({ doctor }) {
                   >
                     {doctor?.bio}
                   </p>
-                  <button className="text-blue-500 text-sm font-semibold md:hidden flex items-center gap-1 group-hover:underline">
+                  <button className="text-secondary text-sm font-semibold md:hidden flex items-center gap-1 group-hover:underline">
                     {isExpanded ? 'Show Less' : 'Read Full Bio'}
                     <Icon name={isExpanded ? 'ChevronUpIcon' : 'ChevronDownIcon'} size={16} />
                   </button>
@@ -199,7 +199,7 @@ export default function DoctorExpertise({ doctor }) {
 
               <motion.div
                 variants={fadeInUp}
-                className="border border-slate-200 rounded-2xl p-4 md:p-6 space-y-4 bg-white shadow-card"
+                className="border border-tertiary rounded-2xl p-4 md:p-6 space-y-4 bg-white shadow-card"
               >
                 <h3 className="font-headline text-xl md:text-2xl font-semibold text-text-primary">
                   Certifications & Memberships

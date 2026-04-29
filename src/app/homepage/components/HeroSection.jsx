@@ -110,17 +110,17 @@ const ReviewCard = () => {
       {/* Dynamic Glow Background */}
       <div
         ref={glowRef}
-        className="absolute inset-x-8 inset-y-4 bg-slate-400/20 blur-[80px] rounded-full opacity-0 -z-10 pointer-events-none"
+        className="absolute inset-x-8 inset-y-4 bg-tertiary blur-[80px] rounded-full opacity-0 -z-10 pointer-events-none"
       />
 
       <div
         ref={cardRef}
-        className="bg-white rounded-xl p-3 md:p-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 border border-slate-100 mb-8 mx-auto relative z-[10000] isolate"
+        className="bg-white rounded-xl p-3 md:p-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 border border-muted mb-8 mx-auto relative z-[10000] isolate"
       >
         {/* Left side: Rating */}
         <div className="flex flex-col items-center gap-1">
           <div className="flex items-center gap-2 whitespace-nowrap">
-            <span className="text-[10px] md:text-[12px] text-slate-600">Rated 4.8/5</span>
+            <span className="text-[10px] md:text-[12px] text-secondary">Rated 4.8/5</span>
             <div className="flex items-center gap-0.5">
               {[...Array(5)].map((_, i) => (
                 <Icon
@@ -128,19 +128,19 @@ const ReviewCard = () => {
                   name="StarIcon"
                   size={16}
                   variant="solid"
-                  className="text-amber-400"
+                  className="text-tertiary"
                 />
               ))}
             </div>
           </div>
-          <div className="text-[18px] md:text-[20px] text-slate-600 flex items-center gap-1.5 font-semibold whitespace-nowrap">
+          <div className="text-[18px] md:text-[20px] text-secondary flex items-center gap-1.5 font-semibold whitespace-nowrap">
             <GoogleIcon /> Verified
           </div>
         </div>
 
         {/* Divider Line */}
-        <div className="hidden md:block w-px h-8 bg-slate-200/60" />
-        <div className="block md:hidden w-16 h-px bg-slate-200/60" />
+        <div className="hidden md:block w-px h-8 bg-tertiary" />
+        <div className="block md:hidden w-16 h-px bg-tertiary" />
 
         {/* Right side: Tagline */}
         <div className="text-center md:text-right">
@@ -288,11 +288,10 @@ export default function HeroSection({ stats }) {
                 resetAutoSlide();
                 setCurrentSlideIndex(idx);
               }}
-              className={`relative h-1.5 md:h-2 rounded-full overflow-hidden cursor-pointer transition-all duration-500 ease-in-out shadow-sm ${
-                idx === currentSlideIndex
+              className={`relative h-1.5 md:h-2 rounded-full overflow-hidden cursor-pointer transition-all duration-500 ease-in-out shadow-sm ${idx === currentSlideIndex
                   ? 'w-8 md:w-12 bg-white/70'
                   : 'w-1.5 md:w-2 bg-white/30 hover:bg-white'
-              }`}
+                }`}
               aria-label={`Go to slide ${idx + 1}`}
             >
               {idx === currentSlideIndex && (
@@ -309,7 +308,7 @@ export default function HeroSection({ stats }) {
         </div>
       </div>
 
-      <div className="w-full bg-blue-50 border-t border-slate-100 py-2 relative z-10 overflow-hidden isolate">
+      <div className="w-full bg-muted border-t border-muted py-2 relative z-10 overflow-hidden isolate">
         <div className="w-full lg:max-w-none mx-auto px-4 md:px-6 lg:px-12">
           {/* Mobile Infinite Horizontal Marquee (< lg) */}
           <div className="lg:hidden relative flex items-center overflow-hidden h-12 mask-linear">
@@ -379,16 +378,16 @@ export default function HeroSection({ stats }) {
                           name={item.icon}
                           size={20}
                           variant="solid"
-                          className="text-blue-600"
+                          className="text-primary"
                         />
                       )}
                     </div>
                     <div>
                       <div className="flex items-baseline gap-1 leading-tight">
-                        <span className="text-sm font-bold text-blue-700">{item.value}</span>
-                        <span className="text-xs font-semibold text-slate-700">{item.label}</span>
+                        <span className="text-sm font-bold text-primary">{item.value}</span>
+                        <span className="text-xs font-semibold text-text-primary">{item.label}</span>
                       </div>
-                      <p className="text-[12px] text-slate-500 font-medium leading-tight">
+                      <p className="text-[12px] text-text-secondary font-medium leading-tight">
                         {item.sub}
                       </p>
                     </div>
@@ -439,9 +438,9 @@ export default function HeroSection({ stats }) {
               },
               {
                 icon: 'ChatBubbleBottomCenterTextIcon',
-                value: `${stats?.reviews}+`,
-                label: 'Reviews',
-                sub: 'Patients',
+                value: `${stats?.rating}/5`,
+                label: 'Rating',
+                sub: 'Reviews',
               },
             ].map((item, index) => (
               <motion.div key={index} variants={fadeInUp} className="flex items-center gap-2 group">
@@ -461,17 +460,17 @@ export default function HeroSection({ stats }) {
                       name={item.icon}
                       size={24}
                       variant="solid"
-                      className="text-blue-600 transition-colors duration-300 px-0.5"
+                      className="text-primary transition-colors duration-300 px-0.5"
                     />
                   )}
                 </div>
 
                 <div>
                   <div className="flex items-baseline gap-1 leading-tight">
-                    <span className="text-base font-bold text-blue-700">{item.value}</span>
-                    <span className="text-xs font-semibold text-slate-700">{item.label}</span>
+                    <span className="text-base font-bold text-primary">{item.value}</span>
+                    <span className="text-xs font-semibold text-text-primary">{item.label}</span>
                   </div>
-                  <p className="text-[13px] text-slate-500 font-medium leading-tight">{item.sub}</p>
+                  <p className="text-[13px] text-text-secondary font-medium leading-tight">{item.sub}</p>
                 </div>
               </motion.div>
             ))}

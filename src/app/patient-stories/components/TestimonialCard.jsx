@@ -11,15 +11,15 @@ export default function TestimonialCard({
 }) {
   const colors = [
     'bg-emerald-100 text-emerald-600',
-    'bg-sky-100 text-sky-600',
-    'bg-orange-100 text-orange-600',
+    'bg-muted text-primary',
+    'bg-tertiary text-secondary',
     'bg-violet-100 text-violet-600',
-    'bg-rose-100 text-rose-600',
-    'bg-amber-100 text-amber-600',
-    'bg-teal-100 text-teal-600',
-    'bg-indigo-100 text-indigo-600',
-    'bg-fuchsia-100 text-fuchsia-600',
-    'bg-cyan-100 text-cyan-600',
+    'bg-tertiary text-secondary',
+    'bg-tertiary text-secondary',
+    'bg-muted text-primary',
+    'bg-muted text-primary',
+    'bg-tertiary text-secondary',
+    'bg-muted text-primary',
   ];
 
   // Simple hash to consistently pick a color for a name
