@@ -1,15 +1,14 @@
 import Header from '@/components/common/Header';
 import HeroSection from './homepage/components/HeroSection';
-import dynamic from 'next/dynamic';
 
-const VideoTestimonials = dynamic(() => import('./homepage/components/testimonials'), { ssr: false });
-const TreatmentSpecialties = dynamic(() => import('./homepage/components/TreatmentSpecialties'));
-const DoctorExpertise = dynamic(() => import('./homepage/components/DoctorExpertise'));
-const PatientReviews = dynamic(() => import('./homepage/components/PatientReviews'), { ssr: false });
-const WhyChooseUs = dynamic(() => import('./homepage/components/WhyChooseUs'));
-const AppointmentCTA = dynamic(() => import('./homepage/components/AppointmentCTA'));
-const ImagesCarousel = dynamic(() => import('./homepage/components/imagescarousel'), { ssr: false });
-const FAQ = dynamic(() => import('./homepage/components/faq'));
+import VideoTestimonials from './homepage/components/testimonials';
+import TreatmentSpecialties from './homepage/components/TreatmentSpecialties';
+import DoctorExpertise from './homepage/components/DoctorExpertise';
+import PatientReviews from './homepage/components/PatientReviews';
+import WhyChooseUs from './homepage/components/WhyChooseUs';
+import AppointmentCTA from './homepage/components/AppointmentCTA';
+import ImagesCarousel from './homepage/components/imagescarousel';
+import FAQ from './homepage/components/faq';
 import Footer from '@/components/common/Footer';
 import { BackgroundProvider } from '@/contexts/BackgroundContext';
 import { BackgroundDisplay, BackgroundTrigger } from '@/components/common/ImmersiveBackground';

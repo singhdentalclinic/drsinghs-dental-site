@@ -45,6 +45,12 @@ const componentsMap = {
   'dental-restoration': DentalRestoration,
 };
 
+export async function generateStaticParams() {
+  return Object.keys(componentsMap).map((slug) => ({
+    slug,
+  }));
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const title = slug

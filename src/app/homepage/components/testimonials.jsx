@@ -15,24 +15,28 @@ const testimonials = [
     name: 'Flur',
     treatment: 'Tooth Filling',
     videoUrl: 'https://youtube.com/shorts/ZpaHcfp1rMA',
+    thumbnail: '/assets/images/thumbnails/video_testimonial_thumbnail-1.png',
   },
   {
     id: 2,
     name: 'Harvind Nahal',
     treatment: 'Tooth Implant',
     videoUrl: 'https://www.youtube.com/shorts/J-ZST6G8hhg',
+    thumbnail: '/assets/images/thumbnails/video_testimonial_thumbnail-2.png',
   },
   {
     id: 3,
     name: 'Abha Jain',
     treatment: 'Tooth Implant',
     videoUrl: 'https://www.youtube.com/shorts/5p9P_x_CIsU',
+    thumbnail: '/assets/images/thumbnails/video_testimonial_thumbnail-4.png',
   },
   {
     id: 4,
     name: 'Meera Patel',
     treatment: 'Teeth Implant',
     videoUrl: 'https://www.youtube.com/shorts/pY2V6IB3xJE',
+    thumbnail: '/assets/images/thumbnails/video_testimonial_thumbnail-5.png',
   },
 ];
 
@@ -119,12 +123,13 @@ export default function VideoTestimonials() {
                   className="group relative bg-black rounded-[2rem] shadow-xl overflow-hidden cursor-pointer aspect-[3/4]"
                   onClick={() => openVideo(testimonial.videoUrl)}
                 >
-                  {/* Background Video (Muted Autoplay) */}
+                  {/* Video Thumbnail Preview */}
                   <div className="absolute inset-0 pointer-events-none overflow-hidden scale-105 group-hover:scale-110 transition-transform duration-700">
-                    <iframe
-                      src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1`}
-                      className="absolute top-1/2 left-1/2 w-full h-[133.33%] -translate-x-1/2 -translate-y-1/2 opacity-60 group-hover:opacity-80 transition-opacity duration-500"
-                      allow="autoplay"
+                    <img
+                      src={testimonial.thumbnail || `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+                      alt={`${testimonial.name} Testimonial`}
+                      className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+                      loading="lazy"
                     />
                   </div>
 
